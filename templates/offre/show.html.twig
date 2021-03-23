@@ -1,0 +1,70 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>Offre</title>{% endblock %}
+
+{% block content %}
+    <h1>Offre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ offre.id }}</td>
+            </tr>
+            <tr>
+                <th>NomEntreprise</th>
+                <td>{{ offre.NomEntreprise }}</td>
+            </tr>
+            <tr>
+                <th>Salaire</th>
+                <td>{{ offre.Salaire }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ offre.Description }}</td>
+            </tr>
+            <tr>
+                <th>Localisation</th>
+                <td>{{ offre.Localisation }}</td>
+            </tr>
+            <tr>
+                <th>NombreHeure</th>
+                <td>{{ offre.NombreHeure }}</td>
+            </tr>
+            <tr>
+                <th>TypeContrat</th>
+                <td>{{ offre.TypeContrat }}</td>
+            </tr>
+            <tr>
+                <th>NiveauEtude</th>
+                <td>{{ offre.NiveauEtude }}</td>
+            </tr>
+            <tr>
+                <th>Experience</th>
+                <td>{{ offre.Experience }}</td>
+            </tr>
+            <tr>
+                <th>Langue</th>
+                <td>{{ offre.Langue }}</td>
+            </tr>
+            <tr>
+                <th>DateExpiration</th>
+                <td>{{ offre.DateExpiration ? offre.DateExpiration|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ offre.Tel }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ offre.Email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('offre_index') }}">back to list</a>
+
+    <a href="{{ path('offre_edit', {'id': offre.id}) }}">edit</a>
+
+    {{ include('offre/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'Frontend/base.html.twig' %}
+
+
+
+{% block title %}Ajout évènements{% endblock %}
+
+{% block content %}
+
+    <h1>Create new Event</h1>
+
+
+    {{ include('event/_form.html.twig') }}
+
+
+    <a href="{{ path('event_index') }}">back to list</a>
+{% endblock %}

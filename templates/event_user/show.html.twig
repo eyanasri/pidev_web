@@ -1,0 +1,40 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}Consulter les évènements{% endblock %}
+
+{% block content %}
+
+    <h1>Event</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ event.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ event.nom }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Lieu</th>
+            <td>{{ event.lieu }}</td>
+        </tr>
+        <tr>
+            <th>Capacité</th>
+            <td>{{ event.getCapacite }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <form action="{{ path('event_index_user') }}">
+        <button class="genric-btn primary circle">Back To List</button>
+    </form>
+
+
+
+
+{% endblock %}

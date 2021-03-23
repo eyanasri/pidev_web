@@ -1,0 +1,11 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>New Meet</title>{% endblock %}
+
+{% block content %}
+    <h1>Create new Meet</h1>
+
+    {{ include('meet/_form.html.twig') }}
+
+    <a href="{{ path('meet_index') }}">back to list</a>
+{% endblock %}

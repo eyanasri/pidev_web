@@ -1,0 +1,82 @@
+{% extends 'Frontend/base.html.twig' %}
+
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+
+
+
+    <div style="margin-left: 600px" class="col-xl-3 col-lg-3 col-md-4">
+        <h1>Events List</h1>
+    <form role="search" id="nav-search-form" method="post" action="{{ path('recherche_event') }}">
+
+        <input style="width: fit-content" type="text" class="form-control round" id="search"  name="search" placeholder="Search">
+        <br>
+        <button class="genric-btn primary-border circle" type="submit" > Search </button>
+
+    </form>
+    </br>
+        <table>
+    <th><form role="search" id="nav-search-form" method="post" action="{{ path('sort_event') }}">
+
+
+        <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+            <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                <button class="genric-btn success-border circle">
+                    Sort by Name
+                </button>
+            </div>
+        </div>
+
+    </form></th>
+
+
+            <th> <form role="search" id="nav-search-form" method="post" action="{{ path('sort_event_date') }}">
+
+
+            <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+                <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                    <button class="genric-btn success-border circle">
+                        Sort by Date
+                    </button>
+                </div>
+            </div>
+
+        </form></th>
+        </table>
+    </div>
+    <section class="featured-job-area">
+        <div class="container">
+            <!-- single-job-content -->
+            {% for event in events %}
+            <div class="single-job-items mb-30">
+                <div class="job-items">
+                    <div class="job-tittle job-tittle2">
+                        <a href="{{ path('event_show_user', {'id': event.id}) }}">
+                            <h4>{{ event.nom }}</h4>
+                        </a>
+                        <ul>
+                            <li>{{ event.date ? event.date|date('Y-m-d') : '' }}</li>
+                            <li><i class="fas fa-map-marker-alt"></i>{{ event.lieu }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="items-link items-link2 f-right">
+                    <a href="{{ path('new', {'id': 1, 'id1' : event.id}) }}">Reserver</a>
+
+                </div>
+            </div>
+
+            {% else %}
+
+                    <h2>No records found</h2>
+
+            {% endfor %}
+        </div>
+
+    </section>
+
+
+
+{% endblock %}

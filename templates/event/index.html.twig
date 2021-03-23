@@ -1,0 +1,72 @@
+{% extends 'Frontend/base.html.twig' %}
+
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+
+    <h1>Event index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Lieu</th>
+            <th>Capacité</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td>{{ event.nom }}</td>
+                <td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                <td>{{ event.lieu }}</td>
+                <td>{{ event.getCapacite }}</td>
+                <td>
+                    <a style="color: black" href="{{ path('event_show', {'id': event.id}) }}">show</a>
+                    <a style="color: black" href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <form action="{{ path('event_new') }}">
+        <button class="genric-btn primary circle">Create new</button>
+    </form>
+    <p>
+        -----------------------------------------------
+    </p>
+    <form role="search" id="nav-search-form" method="post" action="{{ path('recherche_event') }}">
+
+        <input type="text" class="form-control round" id="search"  name="search" placeholder="Search">
+        <br>
+        <button class="btn" type="submit" > Search </button>
+
+    </form>
+
+<p>
+    -----------------------------------------------
+</p>
+
+    <form role="search" id="nav-search-form" method="post" action="{{ path('sort_event') }}">
+
+
+        <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+            <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                <button class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1">
+                    Sort by Name
+                </button>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
