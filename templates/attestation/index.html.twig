@@ -1,0 +1,33 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>Attestation index</title>{% endblock %}
+
+{% block content %}
+    <h1>Attestation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for attestation in attestations %}
+            <tr>
+                <td>{{ attestation.id }}</td>
+                <td>
+                    <a href="{{ path('attestation_show', {'id': attestation.id}) }}">show</a>
+                    <a href="{{ path('attestation_edit', {'id': attestation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('attestation_new') }}">Create new</a>
+{% endblock %}

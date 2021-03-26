@@ -1,0 +1,51 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block title %}Categorie index{% endblock %}
+
+{% block body %}
+    <h1>Categorie index</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Categorie d'emploi</h4>
+                        <p class="card-category"> Table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>NomCategorie</th>
+                                    <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for categorie in categories %}
+                                    <tr>
+                                        <td>{{ categorie.id }}</td>
+                                        <td>{{ categorie.NomCategorie }}</td>
+                                        <td>
+                                            <a href="{{ path('categorie_show', {'id': categorie.id}) }}">show</a>
+                                            <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">edit</a>
+                                            <a href="{{ path('categorie_delete', {'id': categorie.id}) }}">delete</a>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="3">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <a href="{{ path('categorie_new') }}">Create new</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

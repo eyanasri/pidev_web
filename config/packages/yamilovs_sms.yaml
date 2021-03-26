@@ -1,0 +1,9 @@
+yamilovs_sms:
+    providers:
+      # message_bird_provider_doc: ''
+       # message_bird:
+        #    access_key: 'HXR8HN'
+         #   originator: 'ferouk'
+          #  type: sms
+        # You must to define at least one provider configuration
+        # See more info at https://github.com/yamilovs/SmsBundle#configuration

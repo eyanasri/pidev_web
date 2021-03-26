@@ -1,0 +1,77 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}Offres{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section-tittle text-center">
+                <h2>Listes des favoris</h2>
+            </div>
+        </div>
+    </div>
+    <table class="table  table-list-search">
+        <thead class=" text-primary">
+        <tr>
+            <th>Trier par :</th>
+            <th>Nom Entreprise
+                <a style="margin-bottom:20px;" href="{{ path("tridesc") }}" ><i class="fa fa-arrow-down" aria-hidden="false"></i>    </a>
+                <a style="margin-bottom:20px;" href="{{ path("triasc") }}"><i
+                            style="margin-right: 10px;" class="fa fa-arrow-up" aria-hidden="true"></i> </a>
+            </th>
+            <th>Salaire
+                <a style="margin-bottom:20px;" href="{{ path("trisalairedesc") }}" ><i class="fa fa-arrow-down" data-background-color="red" aria-hidden="true"></i>    </a>
+                <a style="margin-bottom:20px;" href="{{ path("trisalaireasc") }}"><i
+                            style="margin-right: 10px;" class="fa fa-arrow-up" aria-hidden="true"></i> </a>
+            </th>
+        </tr>
+        </thead>
+    </table>
+
+    {% for offre in offres %}
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <!-- single-job-content -->
+                <div class="single-job-items mb-30">
+                    <div class="job-items">
+                        <div class="company-img">
+                            <a href="#"><img src="" alt=""></a>
+                        </div>
+                        <div class="job-tittle">
+                            <a href="{{ path('frontend_offre_show', {'id': offre.id}) }}"><h4>{{ offre.NomEntreprise }}</h4></a>
+                            <ul>
+                                <li>{{ offre.TypeContrat }}</li>
+                                <li><i class="fas fa-map-marker-alt"></i>{{ offre.Localisation }}</li>
+                                <li>{{ offre.Salaire }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="items-link f-right">
+                        <a href="{{ path('frontend_offre_show', {'id': offre.id}) }}">Voir plus</a>
+                    </div>
+                    <div class="items-link">
+                    <a href="{{ path('offre_supfavoris', {'id': offre.id }) }}">supprimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="pagination-area pb-115 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="single-wrap d-flex justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-start">
+                                <li class="page-item"><a class="page-link" href="">{{ knp_pagination_render(offres) }}
+                                    </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
