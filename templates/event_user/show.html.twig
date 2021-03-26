@@ -4,14 +4,11 @@
 
 {% block content %}
 
-    <h1>Event</h1>
+    <h1>{{ event.nom }}</h1>
 
     <table class="table">
         <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ event.id }}</td>
-        </tr>
+
         <tr>
             <th>Nom</th>
             <td>{{ event.nom }}</td>
@@ -30,8 +27,17 @@
         </tr>
         </tbody>
     </table>
+    <form method="POST">
+        <p>
+            <input style="display: none" value="{{ event.lieu }}" type="text" name="address" placeholder="Enter address">
+        </p>
+
+        <input class="genric-btn success circle" value="Montrer Dans Maps" type="submit" name="submit_address">
+    </form>
+    </br>
+
     <form action="{{ path('event_index_user') }}">
-        <button class="genric-btn primary circle">Back To List</button>
+        <button class="genric-btn primary circle">Retour à la liste</button>
     </form>
 
 

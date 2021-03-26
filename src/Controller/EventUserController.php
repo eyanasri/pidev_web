@@ -28,10 +28,23 @@ class EventUserController extends AbstractController
 
 
     /**
-     * @Route("/{id}", name="event_show_user", methods={"GET"})
+     * @Route("/{id}", name="event_show_user", methods={"POST","GET"})
      */
     public function show(Event $event): Response
     {
+
+        if (isset($_POST["submit_address"]))
+        {
+            $address = $_POST["address"];
+            $address = str_replace(" ", "+", $address);
+            ?>
+
+            <iframe width="100%" height="500" src="https://maps.google.com/maps?q=<?php echo $address; ?>&output=embed"></iframe>
+
+            <?php
+        }
+        //return $this->render('event/map.html.twig');
+
         return $this->render('event_user/show.html.twig', [
             'event' => $event,
         ]);

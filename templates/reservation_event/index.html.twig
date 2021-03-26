@@ -1,4 +1,5 @@
-<h1 >List des Reservation</h1>
+
+<h1 >Liste des Reservation</h1>
 {% for Notification in app.session.flashbag.get('message') %}
 
     <script>
@@ -7,6 +8,9 @@
     </script>
 
 {% endfor %}
+<form style="margin-left: 1200px" action="{{ path('event_index_user')}}">
+    <button class="genric-btn primary-border circle">Retour au evenements</button>
+</form>
 <table id="customers">
     <thead>
     <tr>

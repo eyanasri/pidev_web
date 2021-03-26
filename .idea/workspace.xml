@@ -10,7 +10,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="083099ed-df68-4807-bb9c-5d16bcb50bd0" name="Default Changelist" comment="" />
+    <list default="true" id="083099ed-df68-4807-bb9c-5d16bcb50bd0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EventUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EventUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event_user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event_user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event_user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event_user/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reservation_event/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reservation_event/index.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +30,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -166,12 +175,12 @@
       <command value="s doctrine:mapping:import App\Entity\CatEvent" />
       <command value="s doctrine:mapping:import App\Entity\CatEvent --path=src/Entity/CatEvent" />
       <command value="s doctrine:schema:update" />
-      <command value="s make:controller" />
       <command value="s make:entity" />
       <command value="s make:migration" />
       <command value="s doctrine:migrations:migrate --force" />
       <command value="s doctrine:schema:update --force" />
       <command value="s server:run" />
+      <command value="s make:controller" />
     </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -205,7 +214,10 @@
       <workItem from="1615500093959" duration="36000" />
       <workItem from="1615500350025" duration="609000" />
       <workItem from="1615535488404" duration="4887000" />
-      <workItem from="1616495889714" duration="11566000" />
+      <workItem from="1616495889714" duration="12934000" />
+      <workItem from="1616512490930" duration="94000" />
+      <workItem from="1616591682462" duration="6299000" />
+      <workItem from="1616762560825" duration="1184000" />
     </task>
     <servers />
   </component>
@@ -249,22 +261,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="553" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1615145500554" />
-    <state width="1497" height="156" key="GridCell.Tab.0.bottom" timestamp="1616507064214">
+    <state width="1497" height="282" key="GridCell.Tab.0.bottom" timestamp="1616597986314">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="156" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1616507064214" />
-    <state width="1497" height="156" key="GridCell.Tab.0.center" timestamp="1616507064213">
+    <state width="1497" height="282" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1616597986314" />
+    <state width="1497" height="282" key="GridCell.Tab.0.center" timestamp="1616597986314">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="156" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1616507064213" />
-    <state width="1497" height="156" key="GridCell.Tab.0.left" timestamp="1616507064213">
+    <state width="1497" height="282" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1616597986314" />
+    <state width="1497" height="282" key="GridCell.Tab.0.left" timestamp="1616597986314">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="156" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1616507064213" />
-    <state width="1497" height="156" key="GridCell.Tab.0.right" timestamp="1616507064214">
+    <state width="1497" height="282" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1616597986314" />
+    <state width="1497" height="282" key="GridCell.Tab.0.right" timestamp="1616597986314">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="156" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1616507064214" />
+    <state width="1497" height="282" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1616597986314" />
     <state x="307" y="63" key="SettingsEditor" timestamp="1616507155106">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -273,10 +285,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="547" y="319" key="SymfonyPathDialog/0.0.1536.834@0.0.1536.834" timestamp="1615145505938" />
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1616495908443">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1616512507839">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1616495908443" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1616512507839" />
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1616593318138">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1616593318138" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

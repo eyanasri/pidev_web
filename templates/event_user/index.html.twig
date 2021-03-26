@@ -9,11 +9,15 @@
 
     <div style="margin-left: 600px" class="col-xl-3 col-lg-3 col-md-4">
         <h1>Events List</h1>
+        <form style="margin-left: 550px" action="{{ path('list', {'id': 1})  }}">
+            <button class="genric-btn primary-border circle">Consulter vos Reservations</button>
+        </form>
+        </br>
     <form role="search" id="nav-search-form" method="post" action="{{ path('recherche_event') }}">
 
         <input style="width: fit-content" type="text" class="form-control round" id="search"  name="search" placeholder="Search">
         <br>
-        <button class="genric-btn primary-border circle" type="submit" > Search </button>
+        <button class="genric-btn primary-border circle" type="submit" > Rechercher </button>
 
     </form>
     </br>
@@ -24,7 +28,7 @@
         <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
             <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
                 <button class="genric-btn success-border circle">
-                    Sort by Name
+                    Trier par nom
                 </button>
             </div>
         </div>
@@ -38,7 +42,7 @@
             <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
                 <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
                     <button class="genric-btn success-border circle">
-                        Sort by Date
+                        Trier par date
                     </button>
                 </div>
             </div>
