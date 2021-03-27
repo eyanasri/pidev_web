@@ -17,6 +17,29 @@ use Symfony\Component\Routing\Annotation\Route;
 class EventUserController extends AbstractController
 {
     /**
+     * @Route("/tri", name="sort_event_user")
+     */
+    public function TriAction(Request $request)
+    {
+
+
+
+
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT e FROM App\Entity\Event e
+    ORDER BY e.nom ASC');
+
+
+
+        $events = $query->getResult();
+
+        return $this->render('event_user/index.html.twig', array(
+            'events' => $events));
+
+    }
+
+    /**
      * @Route("/", name="event_index_user", methods={"GET"})
      */
     public function index(EventRepository $eventRepository): Response
@@ -50,6 +73,7 @@ class EventUserController extends AbstractController
         ]);
     }
 
+
     /**
      * @Route("/recherche", name="recherche_event")
      */
@@ -74,28 +98,7 @@ class EventUserController extends AbstractController
 
 
 
-    /**
-     * @Route("/tri", name="sort_event")
-     */
-    public function TriAction(Request $request)
-    {
 
-
-
-
-        $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery(
-            'SELECT e FROM App\Entity\Event e
-    ORDER BY e.nom ASC');
-
-
-
-        $events = $query->getResult();
-
-        return $this->render('event_user/index.html.twig', array(
-            'events' => $events));
-
-    }
     /**
      * @Route("/tri/date", name="sort_event_date")
      */

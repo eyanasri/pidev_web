@@ -14,19 +14,15 @@
     {{ form_errors(form.date) }}
     <table>
 
-        <th>{{ form_widget(form.date.day) }}</th>
-        <th>{{ form_widget(form.date.month) }}</th>
-        <th> {{ form_widget(form.date.year) }}</th>
+        <th>{{ form_widget(form.date.day, {value : "now"|date("d")}) }}</th>
+        <th>{{ form_widget(form.date.month, {value : "now"|date("m")}) }}</th>
+        <th> {{ form_widget(form.date.year, {value : "now"|date("Y")}) }}</th>
     </table>
 </div>
 <div class="mt-10">
     {{ form_errors(form.nom) }}
     {{ form_widget(form.capacite,{'attr':{'class':'single-input','placeholder':'Capacité'}}) }}</div>
-<div class="mt-10">
-    {{ form_label(form.complet) }}
-    {{ form_errors(form.complet) }}
-    {{ form_widget(form.complet) }}
-</div>
+
 
 <p>
 

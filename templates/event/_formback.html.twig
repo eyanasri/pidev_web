@@ -21,9 +21,9 @@
                 {{ form_errors(form.date) }}
                 <table>
 
-                    <th>{{ form_widget(form.date.day) }}</th>
-                    <th>{{ form_widget(form.date.month) }}</th>
-                    <th> {{ form_widget(form.date.year) }}</th>
+                    <th>{{ form_widget(form.date.day, {value : "now"|date("d")}) }}</th>
+                    <th>{{ form_widget(form.date.month, {value : "now"|date("m")}) }}</th>
+                    <th> {{ form_widget(form.date.year, {value : "now"|date("Y")}) }}</th>
                 </table>
                 </div>
             </div>
@@ -33,11 +33,7 @@
                 <label class="bmd-label-floating">Capacité</label>
                 {{ form_widget(form.capacite,{'attr':{'class':'form-control'}}) }}
             </div>
-            <div class="col-md-6">
-                {{ form_label(form.complet) }}
-                {{ form_errors(form.complet) }}
-                {{ form_widget(form.complet) }}
-            </div>
+
         </div>
         </div>
 

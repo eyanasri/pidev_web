@@ -33,6 +33,7 @@ class EventController extends AbstractController
     public function new(Request $request): Response
     {
         $event = new Event();
+        $event->setComplet(false);
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 
@@ -65,8 +66,10 @@ class EventController extends AbstractController
      */
     public function edit(Request $request, Event $event): Response
     {
+        $event->setComplet(false);
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
@@ -110,6 +113,31 @@ class EventController extends AbstractController
         $query = $em->createQuery(
             'SELECT e FROM App\Entity\Event e
     ORDER BY e.nom ASC');
+
+
+
+        $events = $query->getResult();
+
+        return $this->render('event/index.html.twig', array(
+            'events' => $events));
+
+    }
+
+
+
+    /**
+     * @Route("/tri/date", name="tri_date")
+     */
+    public function TriActionDate(Request $request)
+    {
+
+
+
+
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT e FROM App\Entity\Event e
+    ORDER BY e.date ASC');
 
 
 

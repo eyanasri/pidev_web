@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\EventRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=EventRepository::class)
@@ -29,6 +31,11 @@ class Event
 
     /**
      * @ORM\Column(type="date")
+     *
+     * @Assert\Range(
+     *     min = "now",
+     *     minMessage = "Veuillez saisir une date valide"
+     * )
      */
     private $date;
 
@@ -38,7 +45,8 @@ class Event
     private $complet;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" )
+     * @Assert\Positive(message = "Veuillez saisir un nombre positif")
      */
     private $capacite;
 
@@ -99,7 +107,8 @@ class Event
      * toString
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return $this->getNom();
     }
 
@@ -114,6 +123,7 @@ class Event
 
         return $this;
     }
+
 
 
 }

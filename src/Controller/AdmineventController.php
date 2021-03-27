@@ -85,6 +85,7 @@ class AdmineventController extends AbstractController
     public function new(Request $request): Response
     {
         $event = new Event();
+        $event->setComplet(false);
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 
@@ -118,6 +119,7 @@ class AdmineventController extends AbstractController
      */
     public function edit(Request $request, Event $event): Response
     {
+        $event->setComplet(false);
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 
