@@ -1,0 +1,39 @@
+{% extends 'Backend/base.html.twig' %}
+{% block title %}<title>Cours</title>{% endblock %}
+
+{% block body %}
+
+    <h1>Cours</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Nom Complet du Cours</th>
+            <td>{{ cour.NomCompletCours }}</td>
+        </tr>
+        <tr>
+            <th>Nom Abrégé du Cours</th>
+            <td>{{ cour.NomAbergeCours }}</td>
+        </tr>
+        <tr>
+            <th>Date Debut Cours</th>
+            <td>{{ cour.DateDebutCours ? cour.DateDebutCours|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Date Fin Cours</th>
+            <td>{{ cour.DateFinCours ? cour.DateFinCours|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Cours en PDF</th>
+            <td>{{ cour.Categorie }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cours_admin') }}"><button class="btn btn-warning">Retour Vers la Liste</button></a>
+    <br>
+    <a href="{{ path('admin_edit', {'id': cour.id}) }}"><button class="btn btn-warning">Modifier Le cours</button></a>
+    <br>
+    {{ include('cours/admindelete.html.twig') }}
+    </div>
+{% endblock %}

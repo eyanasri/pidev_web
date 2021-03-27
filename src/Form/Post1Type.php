@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Form;
+
+use App\Entity\Post;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class Post1Type extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('nom')
+            ->add('prenom')
+            ->add('date')
+            ->add('cv')
+            ->add('id_user')
+            ->add('id_note')
+        ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => Post::class,
+        ]);
+    }
+}

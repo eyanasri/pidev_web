@@ -1,0 +1,65 @@
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}, {'method': 'post', 'attr' : {'id' : 'formFormation'}}) }}
+
+<div class="form-group">
+    <label class="control-label">
+       <h5> Nom Complet du Cours</h5> <span class="symbol required"></span>
+    </label>
+    {{ form_widget(form.NomCompletCours,{ 'attr':{'class':'form-control col-lg-6 col-md-6','placeholder':'Nom Complet'}}, { 'attr': {'class': 'form-control', 'required' : true }}) }}
+</div>
+<div class="form-group">
+    <label class="control-label">
+        <h5> Nom Abergé du Cours</h5> <span class="symbol required"></span>
+    </label>
+    {{ form_widget(form.NomAbergeCours,{ 'attr':{'class':'form-control col-lg-6 col-md-6','placeholder':'Nom Abergé'}}, { 'attr': {'class': 'form-control', 'required' : true, 'touchspin' : 'touchspin', 'data-min' : 0 , 'data-max': 100 , 'data-step': 0.1 ,  'data-decimals' :2 , 'data-boostat' : 5 , 'data-maxboostedstep' : 10  }}) }}
+
+
+
+</div>
+<div class="form-group">
+    <label class="control-label">
+        <h5> Date Debut Cours</h5> <span class="symbol required"></span>
+    </label>
+    <br>
+    {{ form_widget(form.DateDebutCours) }}
+
+</div>
+
+
+<div class="form-group">
+    <label class="control-label">
+        <h5> Date Fin Cours </h5><span class="symbol required"></span>
+    </label>
+    <div class="">
+        {{ form_widget(form.DateFinCours) }}
+    </div>
+</div>
+
+
+
+<div class="form-group">
+    <label class="control-label">
+        <h5> Importer cours</h5> <span class="symbol required"></span>
+    </label>
+    <div class="">
+        {{ form_widget(form.Categorie) }}
+    </div>
+</div>
+
+<div class="">
+</div>
+</div>
+<div class="form-actions">
+    <button type="submit" class="btn btn-primary pull-right">
+        Ajouter <i class="fa fa-arrow-circle-right"></i>
+    </button>
+</div>
+
+{{ form_end(form) }}
+<script>
+    $(document).ready(function() {
+        // you may need to change this code if you are not using Bootstrap Datepicker
+        $('.js-datepicker').datepicker({
+            format: 'yyyy-mm-dd'
+        });
+    });
+</script>

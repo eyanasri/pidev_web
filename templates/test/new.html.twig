@@ -1,0 +1,12 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>New Test</title>{% endblock %}
+
+{% block content %}
+    <h1>Create new Test</h1>
+
+    {{ include('test/_form.html.twig') }}
+<br>
+    <br>
+    <a href="{{ path('test_index') }}"><button class="btn btn-warning">Retour vers la Liste</button></a>
+{% endblock %}

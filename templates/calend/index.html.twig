@@ -1,0 +1,44 @@
+{% extends 'Frontend/base.html.twig' %}
+{% block title %}<title>Calendrier</title>{% endblock %}
+
+{% block content %}
+    <style>
+        #calendrier{
+            width: 60%;
+            margin: auto;
+        }
+    </style>
+
+    <div id="calendrier">
+
+    </div>
+    <script>
+        window.onload = ()=> {
+            let calendarElt = document.querySelector("#calendrier")
+
+            let calendar = new FullCalendar.Calendar(calendarElt, {
+                initialView: 'dayGridMonth',
+                locale:'fr',
+                timeZone:'Afrique/Tunis',
+                headerToolbar:{
+                    start:'prev,next today',
+                    center:'title',
+                    end:'dayGridMonth,timeGridWeek'
+                },
+                events:{{ data|raw }},
+                editable: true,
+                eventResizableFromStart: true,
+
+            })
+            calendar.on('eventChange',(e)=>{
+                console.log(e)
+            })
+            calendar.render()
+
+        }
+    </script>
+    <br>
+    <a href="{{ path('cours_index') }}"><button class="btn btn-warning"><i class="fa fa-arrow-circle-left"></i>Retour Vers la Liste</button></a>
+{% endblock %}
+
+

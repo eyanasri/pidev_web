@@ -1,0 +1,57 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>Offre index</title>{% endblock %}
+
+{% block content %}
+    <h1>Offre index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomEntreprise</th>
+                <th>Salaire</th>
+                <th>Description</th>
+                <th>Localisation</th>
+                <th>NombreHeure</th>
+                <th>TypeContrat</th>
+                <th>NiveauEtude</th>
+                <th>Experience</th>
+                <th>Langue</th>
+                <th>DateExpiration</th>
+                <th>Tel</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offre in offres %}
+            <tr>
+                <td>{{ offre.id }}</td>
+                <td>{{ offre.NomEntreprise }}</td>
+                <td>{{ offre.Salaire }}</td>
+                <td>{{ offre.Description }}</td>
+                <td>{{ offre.Localisation }}</td>
+                <td>{{ offre.NombreHeure }}</td>
+                <td>{{ offre.TypeContrat }}</td>
+                <td>{{ offre.NiveauEtude }}</td>
+                <td>{{ offre.Experience }}</td>
+                <td>{{ offre.Langue }}</td>
+                <td>{{ offre.DateExpiration ? offre.DateExpiration|date('Y-m-d') : '' }}</td>
+                <td>{{ offre.Tel }}</td>
+                <td>{{ offre.Email }}</td>
+                <td>
+                    <a href="{{ path('offre_show', {'id': offre.id}) }}">show</a>
+                    <a href="{{ path('offre_edit', {'id': offre.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('offre_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>Post</title>{% endblock %}
+
+{% block content %}
+    <h1>Post</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ post.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ post.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ post.date ? post.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Cv</th>
+                <td>{{ post.cv }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('post_index') }}">back to list</a>
+
+    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
+
+    {{ include('post/_delete_form.html.twig') }}
+{% endblock %}

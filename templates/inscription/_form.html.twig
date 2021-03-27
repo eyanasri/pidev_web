@@ -1,0 +1,21 @@
+{#  {{ form_start(form) }}
+    {{ form_widget(form) }} #}
+
+{{form_start(form)}}
+{{ form_errors(form.id_cours) }}
+ {{ form_label(form.id_cours,"Id Cours")  }}
+<br>
+ {{ form_widget(form.id_cours,{ 'attr':{'class':'form-control col-lg-6 col-md-6'}}) }}
+
+{{ form_errors(form.id_user) }}
+<br>
+<br>
+<p>Id user</p>
+{{ form_widget(form.id_user) }}
+<br>
+<br>
+<br>
+<br>
+    <button class="btn">{{ button_label|default('Inscrire') }}</button>
+{{ form_end(form) }}
+

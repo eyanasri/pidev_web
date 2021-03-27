@@ -1,0 +1,39 @@
+{#{{ form_start(form,{'attr':{'novalidate':'novalidate'}})}}
+ {{ form_widget(form) }}#}
+
+
+{{form_start(form,{'attr': {'novalidate': 'novalidate'}})}}
+
+ {{ form_errors(form.NomCompletCours) }}</td>
+<h5>Nom Complet du Cours</h5>
+ {{ form_widget(form.NomCompletCours,{ 'attr':{'class':'form-control col-lg-6 col-md-6','placeholder':'Nom Complet'}}) }}
+<br>
+
+
+ {{ form_errors(form.NomAbergeCours) }}
+ <h5>Nom Abrégé du Cours</h5>
+{{ form_widget(form.NomAbergeCours,{ 'attr':{'class':'form-control col-lg-6 col-md-6','placeholder':'Nom Abrégé'}}) }}
+<br>
+
+ {{ form_errors(form.DateDebutCours) }}
+ <h5>Date Debut Cours</h5>
+
+{{ form_widget(form.DateDebutCours) }}
+<br>
+<br>
+<h5>Date fin Cours</h5>
+ {{ form_errors(form.DateFinCours) }}
+
+{{ form_widget(form.DateFinCours) }}
+<br>
+<br>
+ {{ form_errors(form.Categorie) }}
+              <h5>               Impoter cours</h5>
+
+{{ form_widget(form.Categorie) }}
+<br>
+<br>
+    <button class="btn">{{ button_label|default('Ajouter') }}</button>
+{{ form_end(form) }}
+
+

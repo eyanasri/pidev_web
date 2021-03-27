@@ -1,0 +1,13 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block title %}<title>New Cours</title>{% endblock %}
+
+{% block body %}
+    <div class="vertical-space-100"></div>
+
+    <h1>Creér cours</h1>
+
+    {{ include('cours/_form.html.twig') }}
+
+    <a href="{{ path('cours_admin') }}"><button class="btn btn-warning">Retour Vers la Liste</button></a>
+{% endblock %}

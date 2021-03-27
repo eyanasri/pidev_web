@@ -1,0 +1,15 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>New Inscription</title>{% endblock %}
+
+{% block content %}
+    <div class="vertical-space-100"></div>
+<div style="width:800px; margin:0 auto;">
+    <h1>Inscription</h1>
+
+    {{ include('inscription/_form.html.twig') }}
+<br>
+    <br>
+    <a href="{{ path('inscription_index') }}"><button class="btn btn-warning">Retour vers la List</button></a>
+</div>
+{% endblock %}

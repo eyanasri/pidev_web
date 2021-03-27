@@ -1,0 +1,89 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block body%}
+    <div style="margin-left: 200px">
+    <div class="row">
+    <div class="col-md-12">
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <br>
+        <br>
+        <br>
+        <center><input type="text" id="search" placeholder="CHERCHER Cours..."></center>
+        <div class="row">
+            <div class="col-md-12 space20">
+                <a class="btn btn-primary pull-left" href="{{path('admin_new')}}">
+                    Cours <i class="fa fa-plus"></i></a>
+            </div>
+
+        </div>
+
+        Trier <a style="margin-bottom:20px;" href="{{ path("tria") }}" ><i class="fa fa-arrow-down" aria-hidden="true"></i>    </a>
+        <a style="margin-bottom:20px;" href="{{ path("tride") }}"><i
+                    style="margin-right: 10px;" class="fa fa-arrow-up" aria-hidden="true"></i> </a>
+
+        <table class="table table-bordered dataTable" id="tableac" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+            <thead>
+            <tr>
+
+                <th class="hidden-xs center" width="20%"><strong>Nom Complet du Cours</strong></th>
+                <th class="hidden-xs center" width="20%"><strong>Nom Abrégé du Cours</strong></th>
+                <th class="hidden-xs center" width="20%"><strong>Date Debut Cours</strong></th>
+                <th class="hidden-xs center" width="20%"><strong>Date Fin Cours</strong></th>
+                <th class="hidden-xs center" width="20%"><strong>Cours en PDF</strong></th>
+                <th class="hidden-xs center" width="20%"><strong>Afficher</strong></th>
+                <th class="hidden-xs center" width="20%"><strong>Modifier</strong></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for cour in cours %}
+                <tr>
+
+                    <td class="hidden-xs center">{{ cour.NomCompletCours }}</td>
+                    <td class="hidden-xs center">{{ cour.NomAbergeCours }}</td>
+                    <td class="hidden-xs center">{{ cour.DateDebutCours ? cour.DateDebutCours|date('Y-m-d') : '' }}</td>
+                    <td class="hidden-xs center">{{ cour.DateFinCours ? cour.DateFinCours|date('Y-m-d') : '' }}</td>
+                    <td class="hidden-xs center"><a href="{{ asset('uploads/' ~ cour.Categorie) }}"><p>Cliquer sur le PDF </p></a></td>
+                    <td class="hidden-xs center">
+                        <a href="{{ path('admin_show', {'id': cour.id}) }}"><button class="btn btn-warning">cliquer ici</button></a>
+                    </td>
+                    <td class="hidden-xs center">
+                        <a href="{{ path('admin_edit', {'id': cour.id}) }}"><button class="btn btn-warning">cliquer ici</button></a>
+                    </td>
+                </tr>
+                <script>
+                    $(document).ready(function(){
+                        $('#search').keyup(function(){
+                            search_table($(this).val());
+                        });
+                        function search_table(value){
+                            $('#tableac tbody tr').each(function(){
+                                var found = 'false';
+                                $(this).each(function(){
+                                    if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                    {
+                                        found = 'true';
+                                    }
+                                });
+                                if(found == 'true')
+                                {
+                                    $(this).show();
+
+                                }
+                                else
+                                {
+                                    $(this).hide();
+
+                                }
+                            });
+                        }
+                    });
+                </script>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(cours) }}
+        </div>
+    </div>
+
+{% endblock %}

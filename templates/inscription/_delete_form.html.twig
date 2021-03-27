@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('inscription_delete', {'id': inscription.id}) }}" onsubmit="return confirm('Are you sure you want to Cancel this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ inscription.id) }}">
+    <button class="btn">Annuler l'Inscription</button>
+</form>
