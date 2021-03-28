@@ -61,12 +61,19 @@
                             <li>Localisation : <span>{{ offre.Localisation }}</span></li>
                             <li>Contrat : <span>{{ offre.TypeContrat }}</span></li>
                             <li>Salaire :  <span>{{ offre.Salaire }}</span></li>
-                            <li>Date de creation : <span>{{ offre.DateExpiration ? offre.DateExpiration|date('Y-m-d') : '' }}</span></li>
-                            <li>Publie il y'a : <span>{{ "now"|date("d") - offre.DateExpiration | date("d")}} jours {{ "now"|date("m") - offre.DateExpiration | date("m")}} moins {{ "now"|date("Y") - offre.DateExpiration | date("Y")}} Annee</span></li>
-                        </ul>
-                        <div class="apply-btn2">
-                            <a href="#" class="btn">Apply Now</a>
-                        </div>
+                            <li>Date d'expiration : <span>{{ offre.DateExpiration ? offre.DateExpiration|date('Y-m-d') : '' }}</span></li>
+                        {% if  (offre.DateExpiration | date("Y") - "now"|date("Y") ) < 0 or
+                                ( (offre.DateExpiration | date("Y") - "now"|date("Y"))and(offre.DateExpiration | date("m") - "now"|date("m"))) < 0or
+                                    ( (offre.DateExpiration | date("Y") - "now"|date("Y")) and (offre.DateExpiration | date("m") - "now"|date("m")) and (offre.DateExpiration | date("d") - "now"|date("d")) )< 0
+                               %}
+                                {{ "Expired offre you can't apply !!!" }}
+                        {% else %}
+                            <li>Il vous reste pour postuler : <span>{{ offre.DateExpiration | date("d") - "now"|date("d")}} jours {{ offre.DateExpiration | date("m") - "now"|date("m")}} moins {{ offre.DateExpiration | date("Y") - "now"|date("Y")}} Annee</span></li>
+                            </ul>
+                            <div class="apply-btn2">
+                                <a href="#" class="btn">Apply Now</a>
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="post-details4  mb-50">
                         <!-- Small Section Tittle -->
