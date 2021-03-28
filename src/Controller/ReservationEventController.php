@@ -50,7 +50,7 @@ class ReservationEventController extends AbstractController
      * @Route("/new/{id}/{id1}", name="new")
      * Method({"GET", "POST"})
      */
-    public function new(Request $request,$id,$id1)
+    public function new(Request $request,$id,$id1, \Swift_Mailer $mailer)
     {
         $reservation = new ReservationEvent();
         $reservation->setIdclient($id);
@@ -89,6 +89,23 @@ class ReservationEventController extends AbstractController
 
             $entityManager->persist($reservation);
             $entityManager->flush();
+
+            $client = $this->getDoctrine()->getRepository(Users::class)->find($reservation->getIdclient());
+
+
+
+
+            $message = (new \Swift_Message('Réservation evenment JobCore'))
+                ->setFrom('reservations.jobcore@gmail.com')
+                ->setTo($client->getEmail())
+                ->setBody(
+                    $this->renderView(
+                        'emails/reservationevent.html.twig'
+                    ),
+                    'text/html'
+                );
+                 $mailer->send($message);
+                 $this->addFlash('message','Vous recevrez un Email de confirmation dans les plus bref delais');
 
             return $this->redirectToRoute('list',array('id' => $reservation->getIdclient()));
         }
