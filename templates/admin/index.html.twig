@@ -1,0 +1,58 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block content %}
+    <table class="table">
+        <tr>
+            <td>ID</td>
+            <td>{{ app.user.id }}</td>
+        </tr>
+        <tr>
+            <td>Utilisateur</td>
+            <td> {{ app.user.nom }}{{ app.user.prenom }}</td>
+        </tr>
+        <tr>
+            <td> Email </td>
+            <td>{{ app.user.email }}</td>
+        </tr>
+        <tr>
+            <td> Roles </td>
+            <td> {% for role in app.user.roles %}
+                    {% if role == "ROLE_USER" %}
+                        Utilisateur
+                    {% elseif role == "ROLE_RECRUTEUR" %}
+                        Recruteur
+                    {% elseif role == "ROLE_FORMATEUR" %}
+                        Formateur
+                    {% elseif role == "ROLE_ADMIN" %}
+                        Admin
+                    {% endif %}
+                {% endfor %} </td>
+        </tr>
+        <tr>
+            <td> Date de naissance </td>
+            <td>{{ app.user.datenais }}</td>
+        </tr>
+        <tr>
+            <td> Adress </td>
+            <td>{{ app.user.adress }}</td>
+        </tr>
+        <tr>
+            <td>boulot</td>
+            <td>{{ app.user.boulot }}</td>
+        </tr>
+        <tr>
+            <td>Experience</td>
+            <td>{{ app.user.experience }}</td>
+        </tr>
+        <tr>
+            <td> Discription </td>
+            <td>{{ app.user.discription }}</td>
+        </tr>
+        <tr>
+            <td> Sexe</td>
+            <td> {{ app.user.sexe }}</td>
+        </tr>
+
+
+    </table>
+{% endblock %}

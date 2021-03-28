@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>JobCore </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/price_rangs.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('profile4.css') }}">
+</head>
+<body>
+{% block header %}
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{{ asset('assets/img/logo/logo.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparrent">
+            <div class="headder-top header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-2">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="index.html"><img src="{{ asset('assets/img/logo/logo.png') }}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="menu-wrapper">
+                                <!-- Main-menu -->
+                                <div class="main-menu">
+                                    <nav class="d-none d-lg-block">
+                                        <ul id="navigation">
+                                            <li><a href="profile">Profile</a></li>
+                                            <li><a href="job_listing.html"> boulots </a></li>
+                                            <li><a href="about.html">cours</a></li>
+                                            <li><a href="#"> evenements </a>
+                                            <li><a href="#"> votre activites </a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html"> cours</a></li>
+                                                    <li><a href="single-blog.html"> evenements</a></li>
+                                                    <li><a href="elements.html"> demandes</a></li>
+                                                    <li><a href="job_details.html"> boulot</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="list">utilisateurs</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- Header-btn -->
+                                <div class="header-btn d-none f-right d-lg-block">
+                                    <a href="{{ path('app_logout') }}" class="btn head-btn2">logout</a>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <a href="{{ path('admin_index') }}" class="btn head-btn1">espace admin</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <section class="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="col-lg-12">
+                        <h6 class="description">Les Utilisateurs</h6>
+                        <div class="row pt-md">
+                            {% for user in users %}
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+                                    <div class="img-box">
+                                        <img src={{ user.image}} class="img-responsive">
+                                        <ul class="text-center">
+                                            <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                                            <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                                            <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                                        </ul>
+                                    </div>
+                                    <h1>{{ user.nom }}{{ user.prenom }}</h1>
+                                    <h2>{{ user.experience }}/{{user.boulot  }}</h2>
+                                    <p>{{ user.discription }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1 text-center">
+
+                <h6>Coded with <i class="fa fa-heart red"></i> by <a href="http://www.nabeel.co.in" target="_blank">Eia</a></h6>
+            </div>
+        </div>
+    </footer>
+
+{% endblock%}
+{% block footer %}
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area footer-bg footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-30">
+                                <div class="footer-tittle">
+                                    <h4>Pidev-web</h4>
+                                    <div class="footer-pera">
+                                        <p>JobCore est une Application Web/Desktop/Mobile d'embauche  comme LinkedIn ,TanitJobs .... pour faciliter les recherches et gagner de bonnes résolutions et expériences professionnelles réalisé par l'équipe  Engineers 3A21 .</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Contact Info</h4>
+                                <ul>
+                                    <li>
+                                        <p>Address : Esprit Ghazela</p>
+                                    </li>
+                                    <li><a href="#">Phone : +8880 44338899</a></li>
+                                    <li><a href="#">Email : jobcore@esprit.tn</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+
+
+                                <!-- Form -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="row footer-wejed justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <!-- logo -->
+                        <div class="footer-logo mb-20">
+                            <a href="index.html"><img src="{{ asset('assets/img/logo/logo2_footer.png') }}" alt=""></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- footer-bottom area -->
+        <div class="footer-bottom-area footer-bg">
+            <div class="container">
+                <div class="footer-border">
+                    <div class="row d-flex justify-content-between align-items-center">
+                        <div class="col-xl-10 col-lg-10 ">
+
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="footer-social f-right">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+{% endblock %}
+<!-- JS here -->
+
+<!-- All JS Custom Plugins Link Here here -->
+<script src="{{ asset('./assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="{{ asset('./assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+<script src="{{ asset('./assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('./assets/js/bootstrap.min.js') }}"></script>
+<!-- Jquery Mobile Menu -->
+<script src="{{ asset('./assets/js/jquery.slicknav.min.js') }}"></script>
+
+<!-- Jquery Slick , Owl-Carousel Range -->
+<script src="{{ asset('./assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('./assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('./assets/js/price_rangs.js') }}"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="{{ asset('./assets/js/wow.min.js') }}"></script>
+<script src="{{ asset('./assets/js/animated.headline.js') }}"></script>
+<script src="{{ asset('./assets/js/jquery.magnific-popup.js') }}"></script>
+
+<!-- Scrollup, nice-select, sticky -->
+<script src="{{ asset('./assets/js/jquery.scrollUp.min.js') }}"></script>
+<script src="{{ asset('./assets/js/jquery.nice-select.min.js') }}"></script>
+<script src="{{ asset('./assets/js/jquery.sticky.js') }}"></script>
+
+<!-- contact js -->
+<script src="{{ asset('./assets/js/contact.js') }}"></script>
+<script src="{{ asset('./assets/js/jquery.form.js') }}"></script>
+<script src="{{ asset('./assets/js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('./assets/js/mail-script.js') }}"></script>
+<script src="{{ asset('./assets/js/jquery.ajaxchimp.min.js') }}"></script>
+
+<!-- Jquery Plugins, main Jquery -->
+<script src="{{ asset('./assets/js/plugins.js') }}"></script>
+<script src="{{ asset('./assets/js/main.js') }}"></script>
+</body>
+</html>
+

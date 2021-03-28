@@ -1,0 +1,39 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}Registre {% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div style="text-align: right">
+            <img src="https://www.fourchette-et-bikini.fr/sites/default/files/styles/full_670x350/public/couple-de-travail-work-wife.jpg?itok=322h9uGe" width="1000" />
+        </div>
+        <div style="text-align:left">
+            <center><h2>Register</h2>
+                {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
+
+                {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.nom) }}
+                {{ form_row(registrationForm.prenom) }}
+                {{ form_row(registrationForm.image) }}
+                {{ form_row(registrationForm.lien_fb) }}
+                {{ form_row(registrationForm.lien_twitter) }}
+                {{ form_row(registrationForm.lien_linkedin) }}
+                {{ form_row(registrationForm.datenais) }}
+                {{ form_row(registrationForm.adress) }}
+                {{ form_row(registrationForm.boulot) }}
+                {{ form_row(registrationForm.experience) }}
+                {{ form_row(registrationForm.discription) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+                {{ form_row(registrationForm.sexe) }}
+                {{ form_row(registrationForm.roles) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+                <center> <button type="submit" class="btn">Register</button> </center>
+                {{ form_end(registrationForm) }}
+            </center>
+        </div>
+    </div>
+
+{% endblock%}

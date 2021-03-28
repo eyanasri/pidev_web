@@ -1,0 +1,170 @@
+{% extends 'frontendconnected/base.html.twig' %}
+
+{% block content %}
+   <div class="main-content">
+
+    <!-- Header -->
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(https://www.elsevier.com/__data/assets/image/0011/997553/Laptop-iStock.jpg); background-size: cover; background-position: center top;">
+        <!-- Mask -->
+        <span class="mask bg-gradient-default opacity-8"></span>
+        <!-- Header container -->
+        <div class="container-fluid d-flex align-items-center ">
+            <div class="row">
+                <div class="col-lg-25 col-md-10">
+                    <h1 class="display-2 text-white">Salut {{ app.user.prenom  }}</h1>
+                    <p class="text-white mt-0 mb-5">Voici votre profile personnel </p>
+                    <a href="profile/modifier" class="btn btn-info">Editer votre profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+        <div class="row">
+            <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+                <div class="card card-profile shadow">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 order-lg-2">
+                            <div class="card-profile-image">
+                                <a href="#">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                        <div class="d-flex justify-content-between">
+                            <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0 pt-md-4">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                                    <div>
+                                        <span class="heading"></span>
+                                        <span class="description"></span>
+                                    </div>
+                                    <div>
+                                        <span class="heading"></span>
+                                        <span class="description"></span>
+                                    </div>
+                                    <div>
+                                        <span class="heading"></span>
+                                        <span class="description"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3>
+                                {{ app.user.prenom }} {{ app.user.nom }}<span class="font-weight-light"></span>
+                            </h3>
+                            <div class="h5 font-weight-300">
+                                <i class="ni location_pin mr-2"></i> {{ app.user.adress }}
+                            </div>
+                            <div class="h5 mt-4">
+                                <i class="ni business_briefcase-24 mr-2"></i>{{ app.user.boulot }}
+                            </div>
+                            <div>
+                                <i class="ni education_hat mr-2"></i>{{ app.user.experience }}
+                            </div>
+                            <hr class="my-4">
+                            <p>{{ app.user.discription }}</p>
+                            <a > </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 order-xl-1">
+                <div class="col-xl-8 order-xl-1">
+                    <div class="card-header bg-white border-0">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">Mon compte</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="profile-head">
+                                        <h5>
+                                            {{ app.user.prenom }}{{ app.user.nom }}
+                                        </h5>
+                                        <h6>
+                                            Web Developer and Designer
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <table class="table">
+                            <tr>
+                                <td>ID</td>
+                                <td>{{ app.user.id }}</td>
+                            </tr>
+                             <tr>
+                                <td>Utilisateur</td>
+                                <td> {{ app.user.nom }}{{ app.user.prenom }}</td>
+                             </tr>
+                             <tr>
+                                 <td> Email </td>
+                                 <td>{{ app.user.email }}</td>
+                             </tr>
+                            <tr>
+                                <td> Roles </td>
+                                <td> {% for role in app.user.roles %}
+                                        {% if role == "ROLE_USER" %}
+                                            Utilisateur
+                                        {% elseif role == "ROLE_RECRUTEUR" %}
+                                            Recruteur
+                                        {% elseif role == "ROLE_FORMATEUR" %}
+                                            Formateur
+                                        {% elseif role == "ROLE_ADMIN" %}
+                                            Admin
+                                        {% endif %}
+                                    {% endfor %} </td>
+                            </tr>
+                            <tr>
+                                <td> Date de naissance </td>
+                                <td>{{ app.user.datenais }}</td>
+                            </tr>
+                            <tr>
+                                <td> Adress </td>
+                                <td>{{ app.user.adress }}</td>
+                            </tr>
+                            <tr>
+                                <td>boulot</td>
+                                <td>{{ app.user.boulot }}</td>
+                            </tr>
+                            <tr>
+                                <td>Experience</td>
+                                <td>{{ app.user.experience }}</td>
+                            </tr>
+                            <tr>
+                                <td> Discription </td>
+                                <td>{{ app.user.discription }}</td>
+                            </tr>
+
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     <footer class="footer">
+        <div class="row align-items-center justify-content-xl-between">
+          <div class="col-xl-6 m-auto text-center">
+            <div class="copyright">
+                <p>Made with <a href="https://www.creative-tim.com/product/argon-dashboard" target="_blank"></a> by Eia </p>
+            </div>
+         </div>
+       </div>
+    </footer>
+{% endblock%}
+
+

@@ -1,0 +1,63 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block content %}
+
+
+    <h2>Liste des utilisateurs</h2>
+    <center><a href="{{ path("app_register") }}" class="btn btn-primary">ajouter utilisateur</a></center>
+    <table class="table">
+        <thead>
+        <th>ID</th>
+        <th> Nom</th>
+        <th> Prenom </th>
+        <th>Email</th>
+        <th>Rôles</th>
+        <th>Adress</th>
+        <th>Discription</th>
+        <th>Datenais</th>
+        <th>Boulot</th>
+        <th>Experience</th>
+        <th>Sexe</th>
+        <th>Verification</th>
+        <th>Actions</th>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td> {{ user.nom }}</td>
+                <td> {{ user.prenom }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    {% for role in user.roles %}
+                        {% if role == "ROLE_USER" %}
+                            Utilisateur
+                        {% elseif role == "ROLE_RECRUTEUR" %}
+                            Recruteur
+                        {% elseif role == "ROLE_FORMATEUR" %}
+                            Formateur
+                        {% elseif role == "ROLE_ADMIN" %}
+                            Admin
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td>{{ user.adress }}</td>
+                <td>{{ user.discription }}</td>
+                <td>{{ user.datenais }}</td>
+                <td>{{ user.boulot }}</td>
+                <td>{{ user.Experience }}</td>
+                <td>{{ user.sexe }}</td>
+                <td>{{ user.isVerified }}</td>
+
+                <td><a href="{{ path('admin_modifier_utilisateur', {'id': user.id}) }}"class="btn btn-primary" > Modifier </a> <a href="{{ path('admin_users_delete',{'id':user.id}) }}" class="btn btn-primary">Supprimer</a> <a href="{{ path('admin_users_block',{'id':user.id}) }}" class="btn btn-primary">bloquer ce compte</a> <a href="{{ path('admin_users_unblock',{'id':user.id}) }}" class="btn btn-primary">debloquer ce compte</a></td>
+            </tr>
+
+        {% else %}
+            <p>Aucun utilisateur inscrit</p>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

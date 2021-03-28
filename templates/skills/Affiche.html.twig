@@ -1,0 +1,24 @@
+{% extends 'frontendconnected/base.html.twig' %}
+
+{% block content %}
+
+<div class="vertical-space-85"></div>
+<div class="vertical-space-85"></div>
+    <center><a href="{{ path("skills_ajouter") }}" class="btn btn-primary">Add skill</a></center>
+  <table class="table">
+      <tr>
+       <th> ID </th>
+       <th> Name</th>
+        <td> DELETE </td>
+      </tr>
+      <tr {% for s in skills %}>
+        <td> {{  s.id }}</td>
+        <td>  {{ s.name }}</td>
+        <td><a href="{{ path('skills_supprimer',{'id':s.id}) }}"class="btn btn-primary">Supprimer</a></td>
+          <td><a href="{{ path('skills_modifier',{'id':s.id}) }}"class="btn btn-primary">Modifier</a></td>
+
+      </tr {% endfor %}>
+  </table>
+
+
+{% endblock %}
