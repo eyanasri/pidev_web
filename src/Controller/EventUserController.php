@@ -17,6 +17,28 @@ use Symfony\Component\Routing\Annotation\Route;
 class EventUserController extends AbstractController
 {
     /**
+     * @Route("/recherche", name="recherche_event")
+     */
+    public function searchAction(Request $request)
+    {
+
+        $data = $request->request->get('search');
+
+
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('SELECT e FROM App\Entity\Event e WHERE e.nom    LIKE :data')
+            ->setParameter('data', '%'.$data.'%');
+
+
+        $events = $query->getResult();
+
+        return $this->render('event_user/index.html.twig', [
+            'events' => $events,
+        ]);
+
+    }
+
+    /**
      * @Route("/tri", name="sort_event_user")
      */
     public function TriAction(Request $request)
@@ -74,27 +96,7 @@ class EventUserController extends AbstractController
     }
 
 
-    /**
-     * @Route("/recherche", name="recherche_event")
-     */
-    public function searchAction(Request $request)
-    {
 
-        $data = $request->request->get('search');
-
-
-        $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery('SELECT e FROM App\Entity\Event e WHERE e.nom    LIKE :data')
-            ->setParameter('data', '%'.$data.'%');
-
-
-        $events = $query->getResult();
-
-        return $this->render('event_user/index.html.twig', [
-            'events' => $events,
-        ]);
-
-    }
 
 
 

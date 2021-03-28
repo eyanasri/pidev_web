@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Event;
 use App\Entity\ReservationEvent;
 use App\Entity\Users;
+use App\Repository\UsersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -15,15 +16,15 @@ use Symfony\Component\HttpFoundation\Request;
 class ReservationEventController extends AbstractController
 {
     /**
-     * @Route("/reservation", name="reservation")
+     * @Route("/reservation", name="reservation_admin", methods={"GET"})
      */
-    public function index(): Response
+    public function inde(UsersRepository $usersRepository): Response
     {
-        return $this->render('reservation_event/index.html.twig', [
-            'controller_name' => 'ReservationEventController',
-
+        return $this->render('reservation_event_admin/index.html.twig', [
+            'users' => $usersRepository->findAll(),
         ]);
     }
+
     /**
      * @Route("/list/{id}",name="list")
      */
@@ -114,7 +115,6 @@ class ReservationEventController extends AbstractController
 
         return $this->redirectToRoute('list',array('id' => $pro));
     }
-
 
 
 
