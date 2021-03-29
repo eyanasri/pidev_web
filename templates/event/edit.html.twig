@@ -5,10 +5,15 @@
 {% block content %}
 
     <h1>Edit Event</h1>
-
-    {{ include('event/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('event_index') }}">back to list</a>
-
-    {{ include('event/_delete_form.html.twig') }}
+    <table>
+        <tr>
+            {{ include('event/_form.html.twig', {'button_label': 'Update'}) }}
+        </tr>
+        <tr>
+            <a class="btn" href="{{ path('event_index') }}">back to list</a>
+        </tr>
+        <tr>
+            {{ include('event/_delete_form.html.twig') }}
+        </tr>
+    </table>
 {% endblock %}

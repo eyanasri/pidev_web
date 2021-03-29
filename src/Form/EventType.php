@@ -17,6 +17,7 @@ class EventType extends AbstractType
             ->add('lieu')
             ->add('date')
             ->add('capacite')
+            ->add('Description')
         ;
     }
 

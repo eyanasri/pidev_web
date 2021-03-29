@@ -10,17 +10,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="083099ed-df68-4807-bb9c-5d16bcb50bd0" name="Default Changelist" comment="version 1.3">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pidev_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pidev_web.iml" afterDir="false" />
+    <list default="true" id="083099ed-df68-4807-bb9c-5d16bcb50bd0" name="Default Changelist" comment="version 1.4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReservationEventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationEventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reservation_event/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reservation_event/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EventType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EventType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/_formback.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/_formback.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/editback.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/editback.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/showback.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/showback.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event_user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event_user/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +32,15 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="b8010172-260d-4e9f-95e2-cf39a989b357" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/composer.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -179,18 +187,19 @@
       <command value="s doctrine:mapping:import App\Entity\CatEvent" />
       <command value="s doctrine:mapping:import App\Entity\CatEvent --path=src/Entity/CatEvent" />
       <command value="s doctrine:schema:update" />
-      <command value="s make:entity" />
       <command value="s make:migration" />
       <command value="s doctrine:migrations:migrate --force" />
       <command value="$ composer require mgilet/notification-bundle " />
       <command value="composer require mgilet/notification-bundle " />
       <command value="doctrine:schema:update --force" />
       <command value="composer remove mgilet/notification-bundle" />
-      <command value="s doctrine:schema:update --force" />
       <command value="s make:controller" />
       <command value="composer remove nomaya/social-bundle" />
       <command value="c update" />
+      <command value="composer remove overblog/graphql-bundle" />
       <command value="s server:run" />
+      <command value="s make:entity" />
+      <command value="s doctrine:schema:update --force" />
     </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -235,7 +244,8 @@
       <workItem from="1616885880375" duration="405000" />
       <workItem from="1616886593317" duration="266000" />
       <workItem from="1616932650826" duration="10867000" />
-      <workItem from="1616950205428" duration="3338000" />
+      <workItem from="1616950205428" duration="5173000" />
+      <workItem from="1617012499880" duration="3547000" />
     </task>
     <task id="LOCAL-00001" summary="version 1.1">
       <created>1616764588852</created>
@@ -265,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616935068195</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="version 1.4">
+      <created>1616953596319</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616953596319</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +304,8 @@
     <MESSAGE value="version 1.1" />
     <MESSAGE value="version 1.2" />
     <MESSAGE value="version 1.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.3" />
+    <MESSAGE value="version 1.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.4" />
   </component>
   <component name="WindowStateProjectService">
     <state x="348" y="72" key="#CLI_Interpreters" timestamp="1615145464278">
@@ -310,26 +328,30 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="483" y="295" width="578" height="242" key="ComposerCompositePathDialog/0.0.1536.834@0.0.1536.834" timestamp="1615145473459" />
+    <state x="528" y="330" width="479" height="253" key="ComposerInitDialogKey" timestamp="1616953798637">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="528" y="330" width="479" height="253" key="ComposerInitDialogKey/0.0.1536.834@0.0.1536.834" timestamp="1616953798637" />
     <state x="553" y="159" key="FileChooserDialogImpl" timestamp="1615145500554">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="553" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1615145500554" />
-    <state width="1497" height="174" key="GridCell.Tab.0.bottom" timestamp="1616953268927">
+    <state width="748" height="174" key="GridCell.Tab.0.bottom" timestamp="1617015660067">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="174" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1616953268927" />
-    <state width="1497" height="174" key="GridCell.Tab.0.center" timestamp="1616953268927">
+    <state width="748" height="174" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617015660067" />
+    <state width="748" height="174" key="GridCell.Tab.0.center" timestamp="1617015660067">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="174" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1616953268927" />
-    <state width="1497" height="174" key="GridCell.Tab.0.left" timestamp="1616953268927">
+    <state width="748" height="174" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1617015660067" />
+    <state width="748" height="174" key="GridCell.Tab.0.left" timestamp="1617015660067">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="174" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1616953268927" />
-    <state width="1497" height="174" key="GridCell.Tab.0.right" timestamp="1616953268927">
+    <state width="748" height="174" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1617015660067" />
+    <state width="748" height="174" key="GridCell.Tab.0.right" timestamp="1617015660067">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="174" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1616953268927" />
+    <state width="748" height="174" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1617015660067" />
     <state x="307" y="63" key="SettingsEditor" timestamp="1616845078915">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -338,14 +360,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="547" y="319" key="SymfonyPathDialog/0.0.1536.834@0.0.1536.834" timestamp="1615145505938" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1616935071078">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1616953601400">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1616935071078" />
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1616953268730">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1616953601400" />
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1617012736963">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1616953268730" />
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1617012736963" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

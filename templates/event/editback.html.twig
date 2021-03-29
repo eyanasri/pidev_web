@@ -7,8 +7,9 @@
     <h1>Edit Event</h1>
 
     {{ include('event/_formback.html.twig', {'button_label': 'Update'}) }}
+    {{ include('event/_delete_formback.html.twig') }}
 
     <a href="{{ path('admin_event') }}">back to list</a>
 
-    {{ include('event/_delete_formback.html.twig') }}
+
 {% endblock %}

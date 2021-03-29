@@ -25,8 +25,17 @@
             <th>Capacité</th>
             <td>{{ event.getCapacite }}</td>
         </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ event.getDescription }}</td>
+        </tr>
         </tbody>
     </table>
+
+
+        <a class="genric-btn primary circle" href="{{ path('new', {'id': 1, 'id1' : event.id}) }}">Reserver</a>
+
+
     <form method="POST">
         <p>
             <input style="display: none" value="{{ event.lieu }}" type="text" name="address" placeholder="Enter address">

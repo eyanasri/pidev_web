@@ -50,6 +50,11 @@ class Event
      */
     private $capacite;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $Description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Event
     public function setCapacite(int $capacite): self
     {
         $this->capacite = $capacite;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->Description;
+    }
+
+    public function setDescription(string $Description): self
+    {
+        $this->Description = $Description;
 
         return $this;
     }
