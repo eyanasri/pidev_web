@@ -1,0 +1,38 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block title %}Liste des reservations{% endblock %}
+
+{% block content %}
+
+    <h1>Listes des reservations</h1>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>
+                        <form style="margin-left: 550px" action="{{ path('list', {'id': app.user.id}) }}">
+                            <button class="genric-btn primary-border circle">Reservations</button>
+                        </form>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

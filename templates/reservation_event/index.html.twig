@@ -1,0 +1,114 @@
+{% extends 'frontendconnected/base.html.twig' %}
+{% block title %}Liste des Reservation{% endblock %}
+{% block content %}
+{% for Notification in app.session.flashbag.get('message') %}
+
+    <script>
+
+        alert('{{ Notification }}');
+    </script>
+
+{% endfor %}
+
+<form style="margin-left: 1200px" action="{{ path('event_index_user')}}">
+    <button class="genric-btn primary-border circle nf">Retour au evenements</button>
+</form>
+    </br>
+
+    <form style="margin-left: 1200px" action="{{ path('calendrier', {'id': app.user.id})  }}">
+        <button class="genric-btn success-border circle">Calendrier de reservations</button>
+    </form>
+    </br>
+<table id="customers">
+    <thead>
+    <tr>
+        <th>Nom de l'evenemnt</th>
+        <th>date</th>
+        <th>Adresse email</th>
+        <th class="nf">Annuler</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for Reservation in reservation %}
+    <tr>
+        {% for Event in Event %}
+            {% if Event.id==Reservation.idevent %}
+
+                {% if app.user.id==Reservation.idclient %}
+
+
+
+                    <td>{{ Event.nom}}</td>
+                    <td>{{ Event.date|date('Y-m-d')}}</td>
+
+
+
+                    <td>{{ app.user.email}}</td>
+
+                    <td class="nf">
+                        <a class="genric-btn primary-border circle" href={{ path('delete', {'id': Reservation.id}) }}
+                           onclick="return confirm('Etes-vous sûr de vouloir annuler votre réservation ?');">Annuler</a>
+                    </td>
+
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% endfor %}
+    </tr>
+    </tbody>
+
+</table>
+</br>
+    <script type="text/javascript">
+        function imprimer_page(){
+          NF = document.getElementsByClassName("nf");
+            for (i = 0; i < NF.length; i++) {
+                NF[i].style.display = "none";
+            }
+            window.print();
+
+            for (i = 0; i < NF.length; i++) {
+                NF[i].style.display = "block";
+            }
+        }
+    </script>
+    <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+        <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+            <form>
+                <input id="impression" class="btn nf" name="impression" type="button" onclick="imprimer_page()" value="Imprimer cette page" />
+            </form>
+        </div>
+    </div>
+
+
+<style>
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #1f2b7b;
+        color: white;
+    }
+
+
+</style>
+{% endblock %}
+{% block footer %} {% endblock %}

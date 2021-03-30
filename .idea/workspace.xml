@@ -1,7 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdfc50ef-1538-4c4c-861f-b9e51675b519" name="Default Changelist" comment="" />
+    <list default="true" id="fdfc50ef-1538-4c4c-861f-b9e51675b519" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/CategorieController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/OffreController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/RecruteurController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/CatEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Categorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Event.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Offre.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/ReservationEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CategorieType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/OffreType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CategorieRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/OffreRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Frontend/affichage.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Frontend/favoris.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Frontend/job_details.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Frontend/recruteur_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Frontend/recruteur_edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Frontend/recruteur_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Frontend/recruteur_index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Frontend/recruteur_new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Frontend/recruteur_show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Map/global.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Map/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Map/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/categorie/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/categorie/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/categorie/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/categorie/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/categorie/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/categorie/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/offre/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/offre/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/offre/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/offre/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/offre/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/offre/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/offre/stats.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pidev_5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pidev_5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Backend/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Backend/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Frontend/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Frontend/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/statistique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/statistique.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontendconnected/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontendconnected/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/editprofile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/editprofile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/resume.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/resume.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/userslist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/userslist.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +85,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -115,9 +193,18 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-server-bundle" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/twilio/sdk" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
     </include_path>
   </component>
   <component name="ProjectId" id="1qLAamyHOUmnSfHjNVk6f1AJYl2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -125,18 +212,29 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assetscv" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/Frontend" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\eyana\Desktop\pidev\pidev_5\public\assetscv" />
-      <recent name="C:\Users\eyana\Desktop\pidev\pidev_5\public\jscv" />
-      <recent name="C:\Users\eyana\Desktop\pidev\pidev_5\public\csscv" />
-      <recent name="C:\Users\eyana\Desktop\pidev\pidev_5\templates" />
-      <recent name="C:\Users\eyana\Desktop\pidev\pidev_5\src\Entity" />
+      <recent name="C:\Users\nizar\Desktop\pidev_5\templates\Frontend" />
+      <recent name="C:\Users\nizar\Desktop\pidev_5\templates" />
+      <recent name="C:\Users\nizar\Desktop\pidev_5\src\Repository" />
+      <recent name="C:\Users\nizar\Desktop\pidev_5\src\Form" />
+      <recent name="C:\Users\nizar\Desktop\pidev_5\src\Entity" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="c require" />
+      <command value="require symfony/swiftmailer-bundle" />
+      <command value="composer require symfony/swiftmailer-bundle" />
+      <command value="symfony doctrine:schema:update --force" />
+      <command value="c update" />
+      <command value="symfony make:controller" />
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -148,17 +246,63 @@
       <updated>1616848563024</updated>
       <workItem from="1616848564212" duration="9602000" />
       <workItem from="1616872797296" duration="3382000" />
-      <workItem from="1616941599313" duration="23902000" />
+      <workItem from="1616941599313" duration="30575000" />
+      <workItem from="1616978719005" duration="1943000" />
+      <workItem from="1617097586011" duration="16424000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="530" y="225" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616959981933">
-      <screen x="0" y="40" width="1600" height="860" />
+    <state x="509" y="179" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617108635652">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="509" y="179" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1617108635652" />
     <state x="530" y="225" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1600.860@0.40.1600.860" timestamp="1616959981933" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1617104393243">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1617104393243" />
+    <state width="1497" height="214" key="GridCell.Tab.0.bottom" timestamp="1617112691458">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617112691458" />
+    <state width="1497" height="214" key="GridCell.Tab.0.center" timestamp="1617112691458">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1617112691458" />
+    <state width="1497" height="214" key="GridCell.Tab.0.left" timestamp="1617112691458">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1617112691458" />
+    <state width="1497" height="214" key="GridCell.Tab.0.right" timestamp="1617112691458">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1617112691458" />
+    <state x="573" y="139" key="RollbackChangesDialog" timestamp="1617101095803">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="573" y="139" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1617101095803" />
+    <state x="307" y="63" key="SettingsEditor" timestamp="1617114363616">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="307" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1617114363616" />
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1617112585486">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1617112585486" />
   </component>
 </project>

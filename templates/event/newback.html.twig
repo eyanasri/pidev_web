@@ -1,0 +1,15 @@
+{% extends 'Backend/base.html.twig' %}
+
+
+
+{% block title %}Ajout évènements{% endblock %}
+
+{% block content %}
+    <div class="vertical-space-85"></div>
+    <div class="vertical-space-85"></div>
+    <h1>Create new Event</h1>
+
+    {{ include('event/_formback.html.twig') }}
+
+    <a href="{{ path('admin_event') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,51 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<div class="card-body">
+
+
+    <div class="form-group bmd-form-group">
+        {{ form_errors(form.nom) }}
+        <label class="bmd-label-floating">Nom</label>
+        {{ form_widget(form.nom,{'attr':{'class':'form-control'}}) }}
+    </div>
+</br>
+    <div class="col-md-4">
+        <div class="form-group bmd-form-group">
+            {{ form_errors(form.lieu) }}
+            <label class="bmd-label-floating">Lieu</label>
+            {{ form_widget(form.lieu,{'attr':{'class':'form-control'}}) }}
+        </div>
+        </br>
+        <div class="col-md-6">
+            {{ form_label(form.date) }}
+            {{ form_errors(form.date) }}
+            <table>
+
+                <th>{{ form_widget(form.date.day, {value : "now"|date("d")}) }}</th>
+                <th>{{ form_widget(form.date.month, {value : "now"|date("m")}) }}</th>
+                <th> {{ form_widget(form.date.year, {value : "now"|date("Y")}) }}</th>
+            </table>
+        </div>
+    </div>
+    </br>
+    <div class="col-md-6">
+        <div class="form-group bmd-form-group">
+            {{ form_errors(form.capacite) }}
+            <label class="bmd-label-floating">Capacité</label>
+            {{ form_widget(form.capacite,{'attr':{'class':'form-control'}}) }}
+        </div>
+
+    </div>
+
+    </br>
+    <div class="form-group bmd-form-group">
+        {{ form_errors(form.Description) }}
+        <label class="bmd-label-floating">Description</label>
+        {{ form_widget(form.Description,{'attr':{'class':'form-control'}}) }}
+    </div>
+
+</div>
+    <button type="submit" href="{{ path('event_new') }}" class="btn btn-primary pull-right"/>
+    Save</button>
+
+{{ form_end(form) }}

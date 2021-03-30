@@ -9,9 +9,14 @@
     {% set nbfemme=0 %}
     {% set nbhomme=0 %}
      <table class="table">
-         <tr> <h1>Statistique des utilisateur</h1></tr>
+         <tr> <h1>Statistique des utilisateurs</h1></tr>
+         <tr>
+             <td>entite</td>
+             <td>Nombre</td>
+             <td>Poucentage</td>
+         </tr>
         <tr>
-            <td>Nombre des utilisateurs</td>
+            <td> utilisateurs</td>
             <td>{% for user in users %}
                      {% set nbuser= nbuser + 1 %}
                  {% endfor%}
@@ -19,55 +24,73 @@
             </td>
         </tr>
         <tr>
-            <td>pourcentage des formateur</td>
-            <td> {% for user in users %}
-                      {% for role in user.roles %}
-                           {% if role == "ROLE_FORMATEUR" %}
-                                 {% set nbformateur= nbformateur + 1 %}
-                                 {% endif %}
-                      {% endfor %}
-                 {% endfor %}
-                 {% set resultat=(nbformateur*nbuser)/100 %}
-                 {{ resultat }}
+            <td>formateurs</td>
+            <td>{% for user in users %}
+                    {% for role in user.roles %}
+                        {% if role == "ROLE_FORMATEUR" %}
+                            {% set nbformateur= nbformateur + 1 %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                {{ nbformateur }}
+            </td>
+            <td> 
+                 {{ (nbformateur/nbuser)*100 }} %
             </td>
         </tr>
          <tr>
-             <td>pourcentage des recruteur</td>
-             <td> {% for user in users %}
+             <td> Recruteurs</td>
+             <td>{% for user in users %}
                      {% for role in user.roles %}
                          {% if role == "ROLE_RECRUTEUR" %}
                              {% set nbrecruteur= nbrecruteur + 1 %}
                          {% endif %}
                      {% endfor %}
                  {% endfor %}
-                 {{ (nbrecruteur*nbuser)/100 }}
+                 {{ nbrecruteur }}
+             <td>
+                 {{ (nbrecruteur/nbuser)*100 }} %
+
+             </td>
+         </tr>
+
+         <tr>
+             <td>Simple Utilisateur</td>
+             <td>
+                 {{ (nbuser-nbrecruteur-nbformateur) }}
+             <td>
+                 {{ ((nbuser-nbrecruteur-nbformateur)/nbuser)*100 }} %
 
              </td>
          </tr>
          <tr>
-             <td>pourcentage des femmes</td>
+             <td>Femmes</td>
              <td> {% for user in users %}
-                     {% for sexe in user.sexe %}
-                         {% if sexe == 'Femme' %}
+                         {% if user.sexe == "Femme" %}
                              {% set nbfemme= nbfemme + 1 %}
                          {% endif %}
-                     {% endfor %}
                  {% endfor %}
-                 {{ nbfemme}}
-                 {% set resultat=(nbfemme/nbuser)*100 %}
-                 {{ resultat }}
+
+                 {{ (nbfemme)}}
+
+             </td>
+             <td>
+
+                {{ (nbfemme/nbuser)*100 }} %
+
              </td>
          </tr>
          <tr>
-             <td>pourcentage des hommes</td>
-             <td> {% for user in users %}
-                     {% for sexe in user.sexe %}
-                         {% if sexe == 'Homme' %}
-                             {% set nbhomme= nbhomme + 1 %}
-                         {% endif %}
-                     {% endfor %}
+             <td>Hommes</td>
+             <td>{% for user in users %}
+                     {% if user.sexe == 'Homme' %}
+                         {% set nbhomme= nbhomme + 1 %}
+                     {% endif %}
                  {% endfor %}
-                 {{ (nbfemme/nbuser)*100 }}</td>
+                 {{ nbhomme }}
+             </td>
+             <td>
+                 {{ (nbhomme/nbuser)*100 }}</td>
          </tr>
 
 </table>

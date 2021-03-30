@@ -1,0 +1,98 @@
+{% extends 'frontendconnected/base.html.twig' %}
+
+{% block content %}
+    <!-- job post company Start -->
+    <div class="job-post-company pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-content-between">
+                <!-- Left Content -->
+                <div class="col-xl-7 col-lg-8">
+                    <!-- job single -->
+                    <div class="single-job-items mb-50">
+                        <div class="job-items">
+                            <div class="company-img company-img-details">
+                                <a href="#"><img src="" alt=""></a>
+                            </div>
+                            <div class="job-tittle">
+                                <a href="#">
+                                    <h4>{{ offre.NomEntreprise }}</h4>
+                                </a>
+                                <ul>
+                                    <li>{{ offre.TypeContrat }}</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>{{ offre.Localisation }}</li>
+                                    <li>{{ offre.Salaire }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- job single End -->
+
+                    <div class="job-post-details">
+                        <div class="post-details1 mb-50">
+                            <!-- Small Section Tittle -->
+                            <div class="small-section-tittle">
+                                <h4>Job Description</h4>
+                            </div>
+                            <p>{{ offre.Description }}</p>
+                        </div>
+                        <div class="post-details2  mb-50">
+                            <!-- Small Section Tittle -->
+                            <div class="small-section-tittle">
+                                <h4>Details + Experience</h4>
+                            </div>
+                            <ul>
+                                <li>Nombre d'heure : <span>{{ offre.NombreHeure }}</span></li>
+                                <li>Niveau d'etude : <span>{{ offre.NiveauEtude }}</span></li>
+                                <li>Experience : <span>{{ offre.Experience }}</span></li>
+                                <li>Langues : <span>{{ offre.Langue }}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                            {{ include('map/show.html.twig') }}
+
+
+                </div>
+                <!-- Right Content -->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="post-details3  mb-50">
+                        <!-- Small Section Tittle -->
+                        <div class="small-section-tittle">
+                            <h4>Job Overview</h4>
+                        </div>
+                        <ul>
+                            <li>Localisation : <span>{{ offre.Localisation }}</span></li>
+                            <li>Contrat : <span>{{ offre.TypeContrat }}</span></li>
+                            <li>Salaire :  <span>{{ offre.Salaire }}</span></li>
+                            <li>Date d'expiration : <span>{{ offre.DateExpiration ? offre.DateExpiration|date('Y-m-d') : '' }}</span></li>
+                        {% if  (offre.DateExpiration | date("Y") - "now"|date("Y") ) < 0 or
+                                ( (offre.DateExpiration | date("Y") - "now"|date("Y"))and(offre.DateExpiration | date("m") - "now"|date("m"))) < 0or
+                                    ( (offre.DateExpiration | date("Y") - "now"|date("Y")) and (offre.DateExpiration | date("m") - "now"|date("m")) and (offre.DateExpiration | date("d") - "now"|date("d")) )< 0
+                               %}
+                                {{ "Expired offre you can't apply !!!" }}
+                        {% else %}
+                            <li>Il vous reste pour postuler : <span>{{ offre.DateExpiration | date("d") - "now"|date("d")}} jours {{ offre.DateExpiration | date("m") - "now"|date("m")}} moins {{ offre.DateExpiration | date("Y") - "now"|date("Y")}} Annee</span></li>
+                            </ul>
+                            <div class="apply-btn2">
+                                <a href="#" class="btn">Apply Now</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="post-details4  mb-50">
+                        <!-- Small Section Tittle -->
+                        <div class="small-section-tittle">
+                            <h4>Contact</h4>
+                        </div>
+                        <ul>
+                            <li>Tel : <span> {{ offre.Tel }}</span></li>
+                            <li>Email: <span>{{ offre.Email }}</span></li>
+                        </ul>
+                        <div class="apply-btn2">
+                            <a href="{{ path('frontend_offre_index') }}" class="btn">back to list</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- job post company End -->
+{% endblock %}

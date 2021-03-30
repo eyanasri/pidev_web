@@ -69,13 +69,20 @@
                                             <li><a href="{{ path('users_profile') }}">Profile</a></li>
                                             <li><a href="job_listing.html"> boulots </a></li>
                                             <li><a href="about.html">cours</a></li>
-                                            <li><a href="#"> evenements </a>
+                                            <li><a href="{{ path('event_index_user') }}"> evenements </a>
                                             <li><a href="#"> votre activites </a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html"> cours</a></li>
-                                                    <li><a href="single-blog.html"> evenements</a></li>
+                                                    <li><a href="{{ path('list', {'id': app.user.id})  }}"> evenements</a></li>
                                                     <li><a href="elements.html"> demandes</a></li>
-                                                    <li><a href="job_details.html"> boulot</a></li>
+                                                    <li><a href="{{ path('frontend_offre_index') }}">Offre</a></li>
+                                                    {% if is_granted('ROLE_RECRUTEUR')  or is_granted('ROLE_FORMATEUR') or is_granted('ROLE_ADMIN') %}
+                                                    <li><a href="{{ path('event_index') }}"> Evenements organisés </a></li>
+                                                    {% endif %}
+                                                    {% if is_granted('ROLE_RECRUTEUR') %}
+                                                        <li><a href="{{ path('recruteur_index') }}"> Gestion d'offres </a></li>
+                                                    {% endif %}
+
                                                 </ul>
                                             </li>
                                             <li><a href="{{ path('users_list') }}">utilisateurs</a></li>

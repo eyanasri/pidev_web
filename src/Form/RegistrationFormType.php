@@ -19,7 +19,7 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email')
+            ->add('email' )
             ->add('nom')
             ->add('prenom')
             ->add('adress')
@@ -39,7 +39,7 @@ class RegistrationFormType extends AbstractType
                     'Recruteur' => 'ROLE_RECRUTEUR',
 
                 ],
-                'expanded' => false,
+                'expanded' => true,
                 'multiple' => true,
                 'label' => 'Rôles :'
             ])
@@ -49,6 +49,7 @@ class RegistrationFormType extends AbstractType
                     'Homme' => 'Homme',
 
                 ],
+                'expanded' => true,
                 'label' => 'Sexe :'
             ])
 

@@ -385,6 +385,41 @@ class Users implements UserInterface
 
         return $this;
     }
+    public function getLienFb(): ?string
+    {
+        return $this->lien_fb;
+    }
+
+    public function setLienFb(string $lien_fb): self
+    {
+        $this->lien_fb = $lien_fb;
+
+        return $this;
+    }
+
+    public function getLienLinkedin(): ?string
+    {
+        return $this->lien_linkedin;
+    }
+
+    public function setLienLinkedin(?string $lien_linkedin): self
+    {
+        $this->lien_linkedin = $lien_linkedin;
+
+        return $this;
+    }
+
+    public function getLienTwitter(): ?string
+    {
+        return $this->lien_twitter;
+    }
+
+    public function setLienTwitter(?string $lien_twitter): self
+    {
+        $this->lien_twitter = $lien_twitter;
+
+        return $this;
+    }
 
     /**
      * @return Collection|Skills[]

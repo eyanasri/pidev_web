@@ -21,7 +21,7 @@
                                     vous etes connecte en tant que {{ app.user.prenom }}{{ app.user.nom }}, <a href="{{ path('app_logout') }}" class="btn btn-primary">Logout</a>
                                 </div> </center>
                         {% endif %}
-                        <h2 class="text-center">Login Now</h2>
+                        <h2 class="text-center">se connecter</h2>
                         <label for="inputEmail">Email</label>
                         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
                         <label for="inputPassword">Password</label>
@@ -36,7 +36,7 @@
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input">
-                                <small>Me souviens</small>
+                                <small>se souvenir de moi</small>
                             </label>
                         </div>
                     </form>

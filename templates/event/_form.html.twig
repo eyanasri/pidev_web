@@ -1,0 +1,39 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<div class="mt-10">
+    {{ form_errors(form.nom) }}
+    {{ form_widget(form.nom,{'attr':{'class':'single-input ','placeholder':'Nom'}}) }}
+
+</div>
+<div class="mt-10">
+    {{ form_errors(form.lieu) }}
+    {{ form_widget(form.lieu,{'attr':{'class':'single-input','placeholder':'Lieu'}}) }}
+
+<div class="mt-10">
+    {{ form_label(form.date)}}
+    {{ form_errors(form.date) }}
+    <table>
+
+        <th>{{ form_widget(form.date.day, {value : "now"|date("d")}) }}</th>
+        <th>{{ form_widget(form.date.month, {value : "now"|date("M")}) }}</th>
+        <th> {{ form_widget(form.date.year, {value : "now"|date("Y")}) }}</th>
+    </table>
+</div>
+<div class="mt-10">
+    {{ form_errors(form.nom) }}
+    {{ form_widget(form.capacite,{'attr':{'class':'single-input','placeholder':'Capacité'}}) }}</div>
+
+    <div class="mt-10">
+        {{ form_errors(form.Description) }}
+        {{ form_widget(form.Description,{'attr':{'class':'single-input ','placeholder':'Description'}}) }}
+
+    </div>
+
+</br>
+    </br>
+<p>
+
+</p>
+     <button type="submit" href="{{path('event_new')}}" class="btn"/> Save</button>
+
+{{ form_end(form) }}

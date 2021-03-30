@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+</head>
+<body>
+<style>
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+</style>
+<style>
+
+    .marker {
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    #map {height:550px ;width:660px; }
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<div class="geocoder">
+    <div id="geocoder" ></div>
+</div>
+
+<div id="map"></div>
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+</style>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+
+<script>
+
+    var user_location = [9.423340156576245,35.415673003870296];
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZmFraHJhd3kiLCJhIjoiY2pscWs4OTNrMmd5ZTNra21iZmRvdTFkOCJ9.15TZ2NtGk_AtUvLd27-8xA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: user_location,
+        zoom: 6
+    });
+    //  geocoder here
+    var geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        // limit results to Australia
+        //country: 'IN',
+    });
+
+    var marker ;
+ 
+    // After the map style has loaded on the page, add a source layer and default
+    // styling for a single point.
+    map.on('load', function() {
+        addMarker(user_location,'load');
+        
+
+        geocoder.on('result', function(ev) {
+            console.log(ev.result.center);
+
+        });
+    });
+    map.on('click', function (e) {
+        marker.remove();
+        addMarker(e.lngLat,'click');
+        //console.log(e.lngLat.lat);
+        document.getElementById("a").value = e.lngLat.lat;
+        document.getElementById("b").value = e.lngLat.lng;
+
+    });
+
+    function addMarker(ltlng,event) {
+
+        if(event === 'click'){
+            user_location = ltlng;
+        }
+        marker = new mapboxgl.Marker({draggable: true,color:"#d02922"})
+            .setLngLat(user_location)
+            .addTo(map)
+            .on('dragend', onDragEnd);
+    }
+
+
+
+
+
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        document.getElementById("longitude").value = lngLat.lat;
+        document.getElementById("latitude").value = lngLat.lng;
+        console.log('lng: ' + lngLat.lng + '<br />lat: ' + lngLat.lat);
+    }
+
+
+
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+</script>

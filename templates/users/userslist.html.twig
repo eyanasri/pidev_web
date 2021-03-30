@@ -37,9 +37,11 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="{{ asset('profile4.css') }}">
+
 </head>
 <body>
 {% block header %}
+
     <!-- Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -107,6 +109,19 @@
     </header>
 {% endblock %}
 {% block content %}
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(https://www.cinechronicle.com/wp-content/uploads/2020/02/Friends1.jpg); background-size: cover; background-position: center top;">
+        <!-- Mask -->
+        <span class="mask bg-gradient-default opacity-8"></span>
+        <!-- Header container -->
+        <div class="container-fluid d-flex align-items-center ">
+            <div class="row">
+                <div class="col-lg-25 col-md-10">
+                    <h1 class="display-2 text-white">JobCore Members</h1>
+                    <p class="text-white mt-0 mb-5">Utilisateur : {{ app.user.prenom  }}  {{ app.user.nom }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <section class="team">
         <div class="container">

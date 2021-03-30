@@ -1,0 +1,55 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}Consulter les évènements{% endblock %}
+
+{% block content %}
+
+    <h1>{{ event.nom }}</h1>
+
+    <table class="table">
+        <tbody>
+
+        <tr>
+            <th>Nom</th>
+            <td>{{ event.nom }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Lieu</th>
+            <td>{{ event.lieu }}</td>
+        </tr>
+        <tr>
+            <th>Capacité</th>
+            <td>{{ event.getCapacite }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ event.getDescription }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+        <a class="genric-btn primary circle" href="{{ path('new', {'id': 1, 'id1' : event.id}) }}">Reserver</a>
+
+
+    <form method="POST">
+        <p>
+            <input style="display: none" value="{{ event.lieu }}" type="text" name="address" placeholder="Enter address">
+        </p>
+
+        <input class="genric-btn success circle" value="Montrer Dans Maps" type="submit" name="submit_address">
+    </form>
+    </br>
+
+    <form action="{{ path('event_index_user') }}">
+        <button class="genric-btn primary circle">Retour à la liste</button>
+    </form>
+
+
+
+
+{% endblock %}

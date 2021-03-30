@@ -1,0 +1,13 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}Ajout Catégorie{% endblock %}
+
+{% block content %}
+    <div class="vertical-space-85"></div>
+    <div class="vertical-space-85"></div>
+    <h1>Create new Event</h1>
+
+    {{ include('cat_event/_form.html.twig') }}
+
+    <a href="{{ path('event_index') }}">back to list</a>
+{% endblock %}

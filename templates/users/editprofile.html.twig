@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="main-content">
+    <link rel="stylesheet" href="{{ asset('profile1.css') }}">
 
     <!-- Header -->
     <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(https://www.michalsons.com/wp-content/uploads/2009/07/datadase-e1564732052315.jpg); background-size: cover; background-position: center top;">
@@ -11,9 +12,9 @@
         <div class="container-fluid d-flex align-items-center ">
             <div class="row">
                 <div class="col-lg-25 col-md-10">
-                    <h1 class="display-2 text-white">Editer votre profile</h1>
+                    <h1 class="display-2 text-white">Editer votre profil</h1>
                     <p class="text-white mt-0 mb-5">Utilisateur : {{ app.user.prenom  }}  {{ app.user.nom }}</p>
-                    <a href="profile/modifier" class="btn btn-info">Editer votre profile</a>
+                    <a href="profile/modifier" class="btn btn-info">Editer votre profil</a>
                 </div>
             </div>
         </div>

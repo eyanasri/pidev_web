@@ -1,0 +1,17 @@
+{% extends 'frontendconnected/base.html.twig' %}
+
+{% block title %}New Offre{% endblock %}
+
+{% block content %}
+    {% if is_granted('ROLE_RECRUTEUR') %}
+    <h1>Create new Offre</h1>
+
+    {{ include('Frontend/recruteur_form.html.twig') }}
+
+    {{ include('map/index.html.twig') }}
+
+    <a href="{{ path('recruteur_index') }}">back to list</a>
+    {% else %}
+    <h1>Could not access this page</h1>
+    {% endif %}
+{% endblock %}

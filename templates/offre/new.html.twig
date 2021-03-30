@@ -1,0 +1,17 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block title %}New Offre{% endblock %}
+
+{% block content %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <h1>Create new Offre</h1>
+
+    {{ include('offre/_form.html.twig') }}
+        
+        {{ include('map/index.html.twig') }}
+
+    <a href="{{ path('offre_index') }}">back to list</a>
+    {% else %}
+    <h1>You Are Not An Admin</h1>
+    {% endif %}
+{% endblock %}

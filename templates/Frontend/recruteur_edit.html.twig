@@ -1,0 +1,19 @@
+{% extends 'frontendconnected/base.html.twig' %}
+
+{% block title %}Edit Offre{% endblock %}
+
+{% block content %}
+    {% if is_granted('ROLE_RECRUTEUR') %}
+    <h1>Edit Offre</h1>
+
+    {{ include('Frontend/recruteur_form.html.twig', {'button_label': 'Update'}) }}
+
+    {{ include('Frontend/recruteur_delete_form.html.twig') }}
+
+    <td class="hidden-xs center">
+        <a href="{{ path('recruteur_index') }}"><button class="btn btn-warning">back to list</button></a>
+    </td>
+    {% else %}
+    <h1>Cannot access this page</h1>
+    {% endif %}
+{% endblock %}

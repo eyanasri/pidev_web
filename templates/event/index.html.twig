@@ -1,0 +1,94 @@
+{% extends 'frontendconnected/base.html.twig' %}
+
+
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+    {% if is_granted('ROLE_RECRUTEUR')  or is_granted('ROLE_FORMATEUR') or is_granted('ROLE_ADMIN') %}
+    <h1 style="margin-left: 570px">Mes Evenements</h1>
+<div style="margin-left: 600px" class="col-xl-3 col-lg-3 col-md-4">
+    </br>
+    <form role="search" id="nav-search-form" method="post" action="{{ path('recherche_event') }}">
+
+        <input style="width: fit-content" type="text" class="form-control round" id="search"  name="search" placeholder="Search">
+        <br>
+        <button class="btn" type="submit" > Search </button>
+
+    </form>
+</br>
+
+    <table>
+        <th><form role="search" id="nav-search-form" method="post" action="{{ path('sort_event') }}">
+
+
+        <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+            <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                <button class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1">
+                    Trier par nom
+                </button>
+            </div>
+        </div></th>
+
+    </form>
+
+
+    <th><form role="search" id="nav-search-form" method="post" action="{{ path('tri_date') }}">
+
+
+            <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+                <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                    <button class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1">
+                        Trier par date
+                    </button>
+                </div>
+            </div></th>
+
+        </form>
+    </table>
+
+</div>
+    </br>
+
+    <table  style="font-size: larger; margin-left: auto; margin-right: auto" class="progress-table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Lieu</th>
+            <th>Capacité</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td>{{ event.nom }}</td>
+                <td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                <td>{{ event.lieu }}</td>
+                <td>{{ event.getCapacite }}</td>
+                <td>
+                    <a class="genric-btn primary circle" href="{{ path('event_show', {'id': event.id}) }}">show</a>
+                    <a class="genric-btn success circle" href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+    </br>
+<div style="margin-left: 650px">
+    <form action="{{ path('event_new') }}">
+        <button  class="genric-btn primary circle">Create new</button>
+    </form>
+</br>
+</div>
+{% endif %}
+
+{% endblock %}
