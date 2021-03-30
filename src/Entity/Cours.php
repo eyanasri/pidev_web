@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 
+
 /**
  * @ORM\Entity(repositoryClass=CoursRepository::class)
  */
@@ -146,6 +147,9 @@ class Cours
         $this->inscription = $inscription;
 
         return $this;
+    }
+    public function __toString(){
+        return $this->NomCompletCours;
     }
 
 

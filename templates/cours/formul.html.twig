@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
     <label class="control-label">
-        <h5> Nom Abergé du Cours</h5> <span class="symbol required"></span>
+        <h5> Couleur Background</h5> <span class="symbol required"></span>
     </label>
     {{ form_widget(form.NomAbergeCours,{ 'attr':{'class':'form-control col-lg-6 col-md-6','placeholder':'Nom Abergé'}}, { 'attr': {'class': 'form-control', 'required' : true, 'touchspin' : 'touchspin', 'data-min' : 0 , 'data-max': 100 , 'data-step': 0.1 ,  'data-decimals' :2 , 'data-boostat' : 5 , 'data-maxboostedstep' : 10  }}) }}
 
@@ -50,7 +50,7 @@
 </div>
 <div class="form-actions">
     <button type="submit" class="btn btn-primary pull-right">
-        Ajouter <i class="fa fa-arrow-circle-right"></i>
+        {{ button_label|default('Ajouter') }} <i class="fa fa-arrow-circle-right"></i>
     </button>
 </div>
 

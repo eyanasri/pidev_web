@@ -9,6 +9,8 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
+
+
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 
@@ -28,7 +30,7 @@ class CoursType extends AbstractType
 
 
             ->add('Categorie',FileType::class,[
-                'label'=>'choisissez votre fichier'
+                'label'=>'choisissez votre fichier', 'data_class'=> null
             ])
         ;
     }

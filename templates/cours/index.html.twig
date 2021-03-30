@@ -27,7 +27,7 @@
             <tr>
 
                 <th class="hidden-xs center" width="20%"><strong>Nom Complet du Cours</strong></th>
-                <th class="hidden-xs center" width="20%"><strong>Nom Abrégé Cours</strong></th>
+
                 <th class="hidden-xs center" width="20%"><strong>Date Debut Cours</strong></th>
                 <th class="hidden-xs center" width="20%"><strong>Date Fin Cours</strong></th>
                 <th class="hidden-xs center" width="20%"><strong>Cours en PDF</strong></th>
@@ -40,7 +40,7 @@
                 <tr>
 
                     <td class="hidden-xs center">{{ cour.NomCompletCours }}</td>
-                    <td class="hidden-xs center">{{ cour.NomAbergeCours }}</td>
+
                     <td class="hidden-xs center">{{ cour.DateDebutCours ? cour.DateDebutCours|date('Y-m-d') : '' }}</td>
                     <td class="hidden-xs center">{{ cour.DateFinCours ? cour.DateFinCours|date('Y-m-d') : '' }}</td>
                     <td class="hidden-xs center"><a href="{{ asset('uploads/' ~ cour.Categorie) }}"><p>Cliquer sur le PDF pdf</p>View brochure (PDF)</a></td>

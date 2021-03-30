@@ -11,7 +11,7 @@
 
 
  {{ form_errors(form.NomAbergeCours) }}
- <h5>Nom Abrégé du Cours</h5>
+ <h5>Couleur Background</h5>
 {{ form_widget(form.NomAbergeCours,{ 'attr':{'class':'form-control col-lg-6 col-md-6','placeholder':'Nom Abrégé'}}) }}
 <br>
 
@@ -33,7 +33,7 @@
 {{ form_widget(form.Categorie) }}
 <br>
 <br>
-    <button class="btn">{{ button_label|default('Ajouter') }}</button>
+<button class="btn">{{ button_label|default('Ajouter') }}</button>
 {{ form_end(form) }}
 
 

@@ -42,12 +42,13 @@ class InscriptionController extends AbstractController
    ////////////////envoyer des mails
             $message = (new \Swift_Message('vous ete inscrit'))
                 ->setFrom('mejrialoulou74@gmail.com')
-                ->setTo('mejri_aloulou@hotmail.com')
+                ->setTo($inscription->getIdUser()->getEmail())
                 ->setBody(
                     $this->renderView(
                     // templates/emails/registration.html.twig
                         'inscription/registration.html.twig',
-                        ['name' => $form]
+                        ['name' => $form,
+                            'inscription' => $inscription,]
                     ),
                     'text/html'
                 )

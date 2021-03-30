@@ -25,14 +25,32 @@
 <script>
     function initMap() {
         const myLatLng = { lat: 33.8439408, lng: 9.400138 };
-        const map = new google.maps.Map(document.getElementById("map"), {
+        const silianaLatLng = { lat: 35.9715323, lng: 9.3577129 };
+        const borjLatLng = { lat: 36.90490860142475, lng: 10.148764674804692 };
+        const arianaLatLng = { lat: 36.9685735, lng: 10.1219855 };
+        var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 6,
             center: myLatLng,
         });
         new google.maps.Marker({
             position: myLatLng,
             map,
-            title: "Hello World!",
+            title: "Tunis",
+        });
+        new google.maps.Marker({
+            position: silianaLatLng,
+            map,
+            title: "Siliana",
+        });
+        new google.maps.Marker({
+            position: borjLatLng,
+            map,
+            title: "Borj",
+        });
+        new google.maps.Marker({
+            position: arianaLatLng,
+            map,
+            title: "Ariana",
         });
     }
 </script>
