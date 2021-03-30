@@ -48,9 +48,15 @@ class Users implements UserInterface
      */
     private $inscription;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Inscri::class, mappedBy="UserMail")
+     */
+    private $inscris;
+
     public function __construct()
     {
         $this->id_event = new ArrayCollection();
+        $this->inscris = new ArrayCollection();
     }
 
 
@@ -173,6 +179,33 @@ class Users implements UserInterface
         }
 
         $this->inscription = $inscription;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Inscri[]
+     */
+    public function getInscris(): Collection
+    {
+        return $this->inscris;
+    }
+
+    public function addInscri(Inscri $inscri): self
+    {
+        if (!$this->inscris->contains($inscri)) {
+            $this->inscris[] = $inscri;
+            $inscri->addUserMail($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInscri(Inscri $inscri): self
+    {
+        if ($this->inscris->removeElement($inscri)) {
+            $inscri->removeUserMail($this);
+        }
 
         return $this;
     }

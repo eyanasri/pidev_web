@@ -58,10 +58,16 @@ class Cours
      */
     private $inscription;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Inscri::class, mappedBy="CourName")
+     */
+    private $inscris;
+
     public function __construct()
     {
         $this->DateDebutCours = new \DateTime('now');
         $this->DateFinCours = new \DateTime('now');
+        $this->inscris = new ArrayCollection();
     }
 
 
@@ -150,6 +156,33 @@ class Cours
     }
     public function __toString(){
         return $this->NomCompletCours;
+    }
+
+    /**
+     * @return Collection|Inscri[]
+     */
+    public function getInscris(): Collection
+    {
+        return $this->inscris;
+    }
+
+    public function addInscri(Inscri $inscri): self
+    {
+        if (!$this->inscris->contains($inscri)) {
+            $this->inscris[] = $inscri;
+            $inscri->addCourName($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInscri(Inscri $inscri): self
+    {
+        if ($this->inscris->removeElement($inscri)) {
+            $inscri->removeCourName($this);
+        }
+
+        return $this;
     }
 
 

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Inscri</title>
+
+{% block body %}
+    <h1>Edit Inscri</h1>
+
+    {{ include('inscri/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('inscri_index') }}">back to list</a>
+
+    {{ include('inscri/_delete_form.html.twig') }}
+{% endblock %}
