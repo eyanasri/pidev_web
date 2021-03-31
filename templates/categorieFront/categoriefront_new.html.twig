@@ -1,0 +1,17 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}New Categorie{% endblock %}
+
+{% block content %}
+    {% if is_granted('ROLE_RECRUTEUR') %}
+    <h1>Create new Categorie</h1>
+
+    {{ include('categorieFront/categoriefront_form.html.twig') }}
+
+    <td class="hidden-xs center">
+    <a href="{{ path('categorie_front_index') }}"><button class="btn btn-warning">back to list</button></a>
+    </td>
+    {% else %}
+        <h1>You don't have access</h1>
+    {% endif %}
+{% endblock %}

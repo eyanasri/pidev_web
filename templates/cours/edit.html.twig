@@ -1,0 +1,13 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>Modifier/Supprimer Cours</title>{% endblock %}
+
+{% block content %}
+    <h1>Modifier le Cours</h1>
+
+    {{ include('cours/formul.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('cours_index') }}"><button class="btn btn-warning">Retour Vers la Liste</button></a>
+
+    {{ include('cours/_delete_form.html.twig') }}
+{% endblock %}

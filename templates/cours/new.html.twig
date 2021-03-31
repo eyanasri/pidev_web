@@ -1,0 +1,42 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{#  {% block title %}<title>New Cours</title>{% endblock %}
+
+{% block content %}
+<div class="vertical-space-100"></div>
+
+                           <h1>Creér cours</h1>
+
+   {{ include('cours/_form.html.twig') }}
+
+    <a href="{{ path('cours_index') }}"><button class="btn btn-warning">Retour Vers la Liste</button></a>
+{% endblock %}#}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-3 swMain"></div>
+        <div class="col-md-6 swMain">
+            <div class="row">
+                <div  class="col-md-12">
+                    <fieldset>
+                        <legend>
+                            <h1> Ajouter Formation</h1>
+                        </legend>
+                        {{ include('cours/formul.html.twig') }}
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            // you may need to change this code if you are not using Bootstrap Datepicker
+            $('.js-datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
+    </script>
+    <a href="{{ path('cours_index') }}"><button class="btn btn-warning"><i class="fa fa-arrow-circle-left"></i>Retour Vers la Liste</button></a>
+{% endblock %}
+
+

@@ -1,0 +1,32 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}Categorie{% endblock %}
+
+{% block content %}
+    {% if is_granted('ROLE_RECRUTEUR') %}
+    <h1>Categorie</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ categorie.id }}</td>
+        </tr>
+        <tr>
+            <th>NomCategorie</th>
+            <td>{{ categorie.NomCategorie }}</td>
+        </tr>
+        </tbody>
+    </table>
+<td class="hidden-xs center">
+<a href="{{ path('categorie_front_index') }}"><button class="btn btn-warning">back to list</button></a>
+</td>
+
+<td class="hidden-xs center">
+    <a href="{{ path('categorie_front_edit', {'id': categorie.id}) }}"><button class="btn btn-warning">edit</button></a>
+</td>
+    {{ include('categorieFront/categoriefront_delete_form.html.twig') }}
+    {% else %}
+        <h1>You don't have access</h1>
+    {% endif %}
+{% endblock %}

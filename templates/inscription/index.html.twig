@@ -1,0 +1,66 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>Inscription index</title>{% endblock %}
+
+{% block content %}
+<div style="width:800px; margin:0 auto;">
+    <div class="vertical-space-100"></div>
+    <div class="vertical-space-100"></div>
+
+    <h1>Inscription</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom du Cours</th>
+                <th>Email</th>
+                <th>Afficher</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for inscription in inscriptions %}
+            <tr>
+
+                <td>{{ inscription.getIdCours().getNomCompletCours() }}</td>
+                <td>{{ inscription.getIdUser().getEmail()}}</td>
+                <td>
+                    <a href="{{ path('inscription_show', {'id': inscription.id}) }}"><button class="btn btn-warning">Cliquer ici</button></a></td>
+                  <td>  <a href="{{ path('inscription_edit', {'id': inscription.id}) }}"><button class="btn btn-warning">Cliquer Ici</button></a>
+                </td>
+            </tr>
+            <script>
+                $(document).ready(function(){
+                    $('#search').keyup(function(){
+                        search_table($(this).val());
+                    });
+                    function search_table(value){
+                        $('#tableac tbody tr').each(function(){
+                            var found = 'false';
+                            $(this).each(function(){
+                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                {
+                                    found = 'true';
+                                }
+                            });
+                            if(found == 'true')
+                            {
+                                $(this).show();
+
+                            }
+                            else
+                            {
+                                $(this).hide();
+
+                            }
+                        });
+                    }
+                });
+            </script>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('inscription_new') }}"><button class="btn btn-warning">s'inscrire</button></a>
+</div>
+{% endblock %}

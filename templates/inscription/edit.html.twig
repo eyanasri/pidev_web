@@ -1,0 +1,13 @@
+{% extends 'Frontend/base.html.twig' %}
+
+{% block title %}<title>Edit Inscription</title>{% endblock %}
+
+{% block content %}
+    <h1>Modifier l'Inscription</h1>
+
+    {{ include('inscription/_form.html.twig', {'button_label': 'Modifier'}) }}
+<br>
+    <a href="{{ path('inscription_index') }}"><button class="btn btn-warning">Retour Vers la Liste</a>
+
+    {{ include('inscription/_delete_form.html.twig') }}
+{% endblock %}
