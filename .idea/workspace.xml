@@ -19,58 +19,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdfc50ef-1538-4c4c-861f-b9e51675b519" name="Default Changelist" comment="merge">
-      <change afterPath="$PROJECT_DIR$/src/Controller/CalendController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/CategorieFrontRecController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/CoursController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/InscriptionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Cours.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Inscription.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/CoursType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/InscriptionType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CoursRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/InscriptionRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/calend/adminCalend.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/calend/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/categorieFront/categoriefront_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/categorieFront/categoriefront_edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/categorieFront/categoriefront_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/categorieFront/categoriefront_index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/categorieFront/categoriefront_new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/categorieFront/categoriefront_show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/adminajout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/admindelete.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/adminedit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/afficheadmin.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/caland.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/formul.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/map.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/registration.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/showadmin.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cours/useraffiche.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/inscription/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/inscription/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/inscription/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/inscription/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/inscription/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/inscription/registration.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/inscription/show.html.twig" afterDir="false" />
+    <list default="true" id="fdfc50ef-1538-4c4c-861f-b9e51675b519" name="Default Changelist" comment="integration nizar commit">
+      <change afterPath="$PROJECT_DIR$/src/Controller/InscripController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Inscrip.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/InscripType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/InscripRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/location.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/affichadmin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/editadmin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/registration.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inscrip/showadmin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/users/consultercv.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210327152745.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210328151002.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210328174000.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210328180406.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210328185831.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210328195715.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EditprofileType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EditprofileType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Backend/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Backend/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/users.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/users.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cours/afficheadmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cours/afficheadmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cours/useraffiche.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cours/useraffiche.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/frontendconnected/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontendconnected/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/editprofile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/editprofile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/userslist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/userslist.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,18 +189,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pidev_web.bak" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/users" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nizar\Desktop\pidev_5\src\Controller" />
+      <recent name="C:\Users\nizar\Desktop\pidev_5\templates\users" />
+      <recent name="C:\Users\nizar\Desktop\pidev_5\templates\admin" />
       <recent name="C:\Users\nizar\Desktop\pidev_5\templates" />
       <recent name="C:\Users\nizar\Desktop\pidev_5\src\Repository" />
       <recent name="C:\Users\nizar\Desktop\pidev_5\src\Form" />
-      <recent name="C:\Users\nizar\Desktop\pidev_5\src\Entity" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -234,8 +211,9 @@
       <command value="c update" />
       <command value="symfony make:controller" />
       <command value="symfony doctrine:migrations:migrate" />
-      <command value="symfony make:migration" />
+      <command value="symfony server:run" />
       <command value="symfony doctrine:schema:update --force" />
+      <command value="symfony make:migration" />
     </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -254,6 +232,8 @@
       <workItem from="1617125933888" duration="15000" />
       <workItem from="1617126185112" duration="9000" />
       <workItem from="1617185461707" duration="177000" />
+      <workItem from="1617186408757" duration="318000" />
+      <workItem from="1617191017572" duration="6401000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1617114398849</created>
@@ -262,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617114398849</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="integration nizar commit">
+      <created>1617186543761</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1617186543761</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +269,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+    <MESSAGE value="integration nizar commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="integration nizar commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617121505965">
@@ -298,22 +286,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1617185501574" />
-    <state width="1497" height="214" key="GridCell.Tab.0.bottom" timestamp="1617125764811">
+    <state width="1497" height="214" key="GridCell.Tab.0.bottom" timestamp="1617197685114">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617125764811" />
-    <state width="1497" height="214" key="GridCell.Tab.0.center" timestamp="1617125764811">
+    <state width="1497" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617197685114" />
+    <state width="1497" height="214" key="GridCell.Tab.0.center" timestamp="1617197685114">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1617125764811" />
-    <state width="1497" height="214" key="GridCell.Tab.0.left" timestamp="1617125764810">
+    <state width="1497" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1617197685114" />
+    <state width="1497" height="214" key="GridCell.Tab.0.left" timestamp="1617197685114">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1617125764810" />
-    <state width="1497" height="214" key="GridCell.Tab.0.right" timestamp="1617125764811">
+    <state width="1497" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1617197685114" />
+    <state width="1497" height="214" key="GridCell.Tab.0.right" timestamp="1617197685114">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1617125764811" />
+    <state width="1497" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1617197685114" />
     <state x="573" y="139" key="RollbackChangesDialog" timestamp="1617101095803">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -322,14 +310,26 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="307" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1617114363616" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1617114501211">
+    <state width="498" height="443" key="SwitcherDM" timestamp="1617195959512">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1617114501211" />
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1617121895585">
+    <state width="498" height="443" key="SwitcherDM/0.0.1536.834@0.0.1536.834" timestamp="1617195959512" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1617186585951">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1617121895585" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1617186585951" />
+    <state x="0" y="3" width="1087" height="822" key="dock-window-1" timestamp="1617195224649">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="0" y="3" width="1087" height="822" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1617195224649" />
+    <state x="566" y="319" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1617186434929">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="566" y="319" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.834@0.0.1536.834" timestamp="1617186434929" />
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1617191741776">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1617191741776" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1617115807049">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

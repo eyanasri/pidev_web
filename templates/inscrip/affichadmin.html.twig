@@ -1,0 +1,41 @@
+{% extends 'Backend/base.html.twig' %}
+{% block title %}<title>Inscrip index</title>{% endblock %}
+
+{% block content %}
+    <div style="width:800px; margin:0 auto;">
+        <div class="vertical-space-100"></div>
+        <div class="vertical-space-100"></div>
+
+        <h1>Inscription</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom du Cours</th>
+                <th>Email de l'utilisateur</th>
+                <th>Modifier/Annuler l'Inscription</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for inscrip in inscrips %}
+                <tr>
+                    <td>{{ inscrip.id }}</td>
+                    <td>{{ inscrip.courNom }}</td>
+                    <td>{{ inscrip.courEmail }}</td>
+                    <td>
+                        <a href="{{ path('inscripadmin_show', {'id': inscrip.id}) }}"><button class="btn btn-warning">Afficher</button></a>
+                        <a href="{{ path('inscripadmin_edit', {'id': inscrip.id}) }}"><button class="btn btn-warning">Modifier</button></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+{% endblock %}

@@ -63,9 +63,9 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ asset("map.html") }}">
+                    <a class="nav-link" href="{{ path('admin_location') }}">
                         <i class="material-icons">location_ons</i>
-                        <p>Maps</p>
+                        <p>Login Attempt</p>
                     </a>
                 </li>
                 <li class="nav-item ">
@@ -170,10 +170,10 @@
                                 </p>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="{{ path('users_profile') }}">Profile</a>
                                 <a class="dropdown-item" href="#">Settings</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Log out</a>
+                                <a class="dropdown-item" href="{{ path('app_logout') }}">Log out</a>
                             </div>
                         </li>
                     </ul>

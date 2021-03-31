@@ -6,6 +6,16 @@
 
 
     <h2>Liste des utilisateurs</h2>
+    </br>
+    <form style="margin-left: 550px" role="search" id="nav-search-form" method="post" action="{{ path('admin_recherche_users') }}">
+
+        <input style="width: fit-content" type="text" class="form-control round" id="search"  name="search" placeholder="Search">
+        <br>
+        <button class="btn btn-primary" type="submit" > Search </button>
+
+    </form>
+    </br>
+
     <center><a href="{{ path("app_register") }}" class="btn btn-primary">ajouter utilisateur</a></center>
     <table class="table">
         <thead>
@@ -57,6 +67,7 @@
         {% else %}
             <p>Aucun utilisateur inscrit</p>
         {% endfor %}
+
         </tbody>
     </table>
 

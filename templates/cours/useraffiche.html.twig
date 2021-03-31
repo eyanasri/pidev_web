@@ -14,7 +14,7 @@
         <center><input type="text" id="search" placeholder="CHERCHER Cours..."></center>
         <div class="row">
             <div class="col-md-12 space20">
-                <a class="btn btn-primary pull-left" href="{{path('inscription_new')}}">
+                <a class="btn btn-primary pull-left" href="{{path('inscrip_new')}}">
                     Inscription </a>
             </div>
 
@@ -27,7 +27,7 @@
             <tr>
 
                 <th class="hidden-xs center" width="20%"><strong>Nom Complet du Cours</strong></th>
-                <th class="hidden-xs center" width="20%"><strong>Nom Abrégé Cours</strong></th>
+
                 <th class="hidden-xs center" width="20%"><strong>Date Debut Cours</strong></th>
                 <th class="hidden-xs center" width="20%"><strong>Date Fin Cours</strong></th>
                 <th class="hidden-xs center" width="20%"><strong>Cours en PDF</strong></th>
@@ -39,7 +39,7 @@
                 <tr>
 
                     <td class="hidden-xs center">{{ cour.NomCompletCours }}</td>
-                    <td class="hidden-xs center">{{ cour.NomAbergeCours }}</td>
+                    
                     <td class="hidden-xs center">{{ cour.DateDebutCours ? cour.DateDebutCours|date('Y-m-d') : '' }}</td>
                     <td class="hidden-xs center">{{ cour.DateFinCours ? cour.DateFinCours|date('Y-m-d') : '' }}</td>
                     <td class="hidden-xs center"><a href="{{ asset('uploads/' ~ cour.Categorie) }}"><p>Cliquer sur le PDF pdf</p>View brochure (PDF)</a></td>
@@ -80,5 +80,7 @@
             {{ knp_pagination_render(cours) }}
         </div>
     </div>
+    <a href="{{ path('calend') }}"><button class="btn btn-warning">Calandrier</button></a>
+    <a href="{{ path('user_map')}}"><button class="btn btn-warning">Map</button></a>
 
 {% endblock %}

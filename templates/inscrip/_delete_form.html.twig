@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('inscrip_delete', {'id': inscrip.id}) }}" onsubmit="return confirm('Are you sure you want to Annull this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ inscrip.id) }}">
+    <button class="btn"><button class="btn btn-warning">Supprimer</button></button>
+</form>

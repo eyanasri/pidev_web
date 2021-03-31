@@ -1,0 +1,31 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block content %}
+
+
+    <h2>LoginAttempts et iP adress des utilisateurs</h2>
+    <table class="table">
+        <thead>
+        <th>ID</th>
+        <th> Nom</th>
+        <th> iP adress </th>
+        <th>Actions</th>
+        </thead>
+        <tbody>
+        {% for login in loginattempt %}
+            <tr>
+                <td>{{ login.id }}</td>
+                <td>{{ login.username }}</td>
+                <td> {{ login.ipAddress }}</td>
+                <td> Supprimer </td>
+            </tr>
+
+        {% else %}
+            <p>Aucun utilisateur inscrit</p>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

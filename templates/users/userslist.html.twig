@@ -109,6 +109,12 @@
     </header>
 {% endblock %}
 {% block content %}
+
+<form role="search" id="nav-search-form" method="post" action="{{ path('users_recherche_users') }}">
+
+    <input style="width: fit-content" type="text" class="form-control round" id="search"  name="search" placeholder="Search">
+    <br>
+    <button class="genric-btn primary-border circle" type="submit" > Rechercher </button>
     <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(https://www.cinechronicle.com/wp-content/uploads/2020/02/Friends1.jpg); background-size: cover; background-position: center top;">
         <!-- Mask -->
         <span class="mask bg-gradient-default opacity-8"></span>
@@ -143,6 +149,8 @@
                                     <h1>{{ user.nom }}{{ user.prenom }}</h1>
                                     <h2>{{ user.experience }}/{{user.boulot  }}</h2>
                                     <p>{{ user.discription }}</p>
+
+                                    <h1> <td><a href="{{ path('users_consultercv',{'id':user.id}) }}"class="btn btn-primary">cv</a></td></h1>
                                 </div>
                             {% endfor %}
                         </div>

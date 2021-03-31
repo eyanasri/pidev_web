@@ -1,0 +1,35 @@
+{% extends 'frontendconnected/base.html.twig' %}
+
+{% block title %}<title>Inscrip</title>{% endblock %}
+
+{% block content %}
+<div style="width:800px; margin:0 auto;">
+    <div class="vertical-space-100"></div>
+    <div class="vertical-space-100"></div>
+    <h1>Inscription</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ inscrip.id }}</td>
+            </tr>
+            <tr>
+                <th>CourNom</th>
+                <td>{{ inscrip.courNom }}</td>
+            </tr>
+            <tr>
+                <th>CourEmail</th>
+                <td>{{ inscrip.courEmail }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('inscrip_index') }}"><button class="btn btn-warning">Retour Vers la Liste</button></a>
+
+    <a href="{{ path('inscrip_edit', {'id': inscrip.id}) }}"><button class="btn btn-warning">Modifier</button></a>
+<br>
+    <br>
+    {{ include('inscrip/_delete_form.html.twig') }}
+</div>
+{% endblock %}

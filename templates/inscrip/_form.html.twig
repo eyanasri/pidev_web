@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+{{ form_errors(form.courNom) }}</td>
+<h5>Nom du Cours</h5>
+{{ form_widget(form.courNom,{ 'attr':{'class':'form-control col-lg-6 col-md-6','placeholder':'Nom Complet'}}) }}
+<br>
+
+
+{{ form_errors(form.courEmail) }}
+<h5>Email</h5>
+{{ form_widget(form.courEmail,{ 'attr':{'class':'form-control col-lg-6 col-md-6','placeholder':'Nom Abrégé'}}) }}
+    <button class="btn">{{ button_label|default('Inscrire') }}</button>
+{{ form_end(form) }}

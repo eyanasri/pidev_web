@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
+use App\Repository\LoginAttemptRepository;
 
 /**
  * @Route ("/admin",name="admin_")
@@ -105,6 +106,46 @@ class AdminController extends AbstractController
         $users = $repository->findall();
         return $this->render('admin/statistique.html.twig' ,['users' => $users]);
     }
+
+
+
+    /**
+     * @param LoginAttemptRepository $repository
+     * @return Response
+     * @Route("/location" , name="location")
+     */
+    public function Location (LoginAttemptRepository  $repository)
+    {
+        #$repository->$this->getDoctrine()->getRepository(Users::class);
+        $loginattempt = $repository->findall();
+        return $this->render('admin/location.html.twig',
+            ['loginattempt' => $loginattempt]);
+    }
+
+
+
+    /**
+     * @Route("/recherche", name="recherche_users")
+     */
+    public function searchAction(Request $request)
+    {
+
+        $data = $request->request->get('search');
+
+
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('SELECT u FROM App\Entity\Users u WHERE u.nom    LIKE :data')
+            ->setParameter('data', '%'.$data.'%');
+
+
+        $users = $query->getResult();
+
+        return $this->render('admin/users.html.twig', [
+            'users' => $users,
+        ]);
+
+    }
+
 
 
 }

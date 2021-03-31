@@ -28,18 +28,7 @@ class EditprofileType extends AbstractType
                 'required' => true,
                 'attr' => ['class' =>'form-control'],
             ])
-            ->add('roles', ChoiceType::class, [
-                'choices' => [
-                    'Utilisateur' => 'ROLE_USER',
-                    'Administrateur' => 'ROLE_ADMIN',
-                    'Formateur' => 'ROLE_FORMATEUR',
-                    'Recruteur' => 'ROLE_RECRUTEUR',
 
-                ],
-                'expanded' => true,
-                'multiple' => true,
-                'label' => 'Rôles'
-            ])
             ->add('nom' )
             ->add('prenom' )
             ->add('datenais')

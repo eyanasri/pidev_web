@@ -69,4 +69,43 @@ class UsersController extends AbstractController
         return $this->render('users/resume.html.twig'
         );
     }
+
+
+
+
+
+    /**
+     * @Route("/recherche", name="recherche_users")
+     */
+    public function searchAction(Request $request)
+    {
+
+        $data = $request->request->get('search');
+
+
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('SELECT u FROM App\Entity\Users u WHERE u.nom    LIKE :data')
+            ->setParameter('data', '%'.$data.'%');
+
+
+        $users = $query->getResult();
+
+        return $this->render('users/userslist.html.twig', [
+            'users' => $users,
+        ]);
+
+    }
+    /**
+     * @Route("consultercv/{id}",name="consultercv")
+     */
+    function ConsultCV($id, UsersRepository  $repository ) {
+        $user=$repository->find($id);
+        $em=$this->getDoctrine()->getManager();
+
+        return $this->render('users/consultercv.html.twig',[
+                'user' => $user,
+
+        ]);
+    }
+
 }
